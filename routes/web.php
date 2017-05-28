@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/', 'SearchesController@index');
+Route::get('/', 'LineupsController@index');
 
 Auth::routes();
 
