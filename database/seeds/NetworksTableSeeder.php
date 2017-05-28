@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Social\Network;
 
 class NetworksTableSeeder extends Seeder
 {
@@ -11,6 +12,9 @@ class NetworksTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Network::create(['name' => 'Facebook']);
+        Network::create(['name' => 'Twitter']);
+        Network::create(['name' => 'Instagram']);
+        Network::create(['name' => 'Friendster']);
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
+use Social\Client;
 
 class ClientsTableSeeder extends Seeder
 {
@@ -11,6 +13,9 @@ class ClientsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $f = Faker::create();
+        foreach(range( 1,5) as $index){
+        	Client::create(['name' => $f->company]);
+        }
     }
 }

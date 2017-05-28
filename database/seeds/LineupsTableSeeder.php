@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class SearchesTableSeeder extends Seeder
+class LineupsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
