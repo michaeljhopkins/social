@@ -2,45 +2,39 @@
 
 namespace Social\Http\Controllers;
 
-use Social\Search;
 use Illuminate\Http\Request;
-use function view;
+use Social\Lineup;
+use Social\Network;
 
-class SearchesController extends Controller
-{
-    public function index()
-    {
-    	/** @var Search $searches */
-    	$searches = Search::with('usernames')->first();
-    }
+class LineupsController extends Controller {
 
-    public function create()
-    {
-        //
-    }
+	public function index() {
+		/** @var Network $network */
+		$network = Network::with( 'usernames.contact' )->first();
+		dd( $network->toArray() );
+	}
 
-    public function store(Request $request)
-    {
-        //
-    }
+	public function create() {
+		//
+	}
 
-    public function show(Search $search)
-    {
-        //
-    }
+	public function store( Request $request ) {
+		//
+	}
 
-    public function edit(Search $search)
-    {
-        //
-    }
+	public function show( Lineup $lineup ) {
+		//
+	}
 
-    public function update(Request $request, Search $search)
-    {
-        //
-    }
+	public function edit( Lineup $lineup ) {
+		//
+	}
 
-    public function destroy(Search $search)
-    {
-        //
-    }
+	public function update( Request $request, Lineup $lineup ) {
+		//
+	}
+
+	public function destroy( Lineup $lineup ) {
+		//
+	}
 }
