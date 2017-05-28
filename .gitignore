@@ -9,3 +9,8 @@ vendor
 node_modules
 .phpintel
 */.phpintel*
+/node_modules
+/public/hot
+/storage/*.key
+/.vagrant
+npm-debug.log
