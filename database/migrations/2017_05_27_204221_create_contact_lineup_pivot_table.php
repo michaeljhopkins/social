@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContactSearchPivotTable extends Migration
+class CreateContactlineupPivotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,12 @@ class CreateContactSearchPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('contact_search', function (Blueprint $table) {
+        Schema::create('contact_lineup', function (Blueprint $table) {
             $table->integer('contact_id')->unsigned()->index();
             $table->foreign('contact_id')->references('id')->on('contacts')->onDelete('cascade');
-            $table->integer('search_id')->unsigned()->index();
-            $table->foreign('search_id')->references('id')->on('searches')->onDelete('cascade');
-            $table->primary(['contact_id', 'search_id']);
+            $table->integer('lineup_id')->unsigned()->index();
+            $table->foreign('lineup_id')->references('id')->on('lineups')->onDelete('cascade');
+            $table->primary(['contact_id', 'lineup_id']);
         });
     }
 
@@ -28,6 +28,6 @@ class CreateContactSearchPivotTable extends Migration
      */
     public function down()
     {
-        Schema::drop('contact_search');
+        Schema::drop('contact_lineup');
     }
 }
