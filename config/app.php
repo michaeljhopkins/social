@@ -169,7 +169,6 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
 	    Barryvdh\Debugbar\ServiceProvider::class,
 	    Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-	    Laracasts\Generators\GeneratorsServiceProvider::class,
 
         /*
          * Application Service Providers...

@@ -10,8 +10,8 @@ class SearchesController extends Controller
 {
     public function index()
     {
-    	$view['searches'] = Search::get();
-    	return view('searches.index',$view);
+    	/** @var Search $searches */
+    	$searches = Search::with('usernames')->first();
     }
 
     public function create()
