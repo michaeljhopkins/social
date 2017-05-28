@@ -1,0 +1,11 @@
+/public/storage
+Homestead.yaml
+Homestead.json
+.env
+.sonar
+.vagrant
+.idea
+vendor
+node_modules
+.phpintel
+*/.phpintel*
