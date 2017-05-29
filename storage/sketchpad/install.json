@@ -1,0 +1,10 @@
+{
+    "type": "integrated",
+    "autoloader": false,
+    "route": "/debug/",
+    "controllers": "app/Http/Controllers/Debug/",
+    "views": "resources/views/debug/",
+    "assets": "public/vendor/debug/",
+    "namespace": "App\\",
+    "basedir": "app/"
+}

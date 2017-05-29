@@ -1,0 +1,2 @@
+require('sketchpad-reload').watch()
+

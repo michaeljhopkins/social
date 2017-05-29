@@ -14,7 +14,8 @@ class Kernel extends ConsoleKernel {
 	 * @var array
 	 */
 	protected $commands = [
-		MigrateReloadCommand::class
+		\Spatie\ArtisanDd\DdCommand::class,
+		\Spatie\MigrateFresh\Commands\MigrateFresh::class,
 	];
 
 	/**
