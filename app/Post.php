@@ -2,7 +2,6 @@
 
 namespace Social;
 
-use EloquentFilter\Filterable;
 use Social\ModelFilters\PostFilter;
 
 /**
@@ -28,12 +27,13 @@ use Social\ModelFilters\PostFilter;
  * @mixin \Eloquent
  */
 class Post extends BaseModel {
-	protected $hidden = ['created_at','updated_at','contact_id','username_id','network_id'];
 
-	public function modelFilter()
-	{
-		return $this->provideFilter( PostFilter::class);
+	protected $hidden = [ 'created_at', 'updated_at', 'contact_id', 'username_id', 'network_id' ];
+
+	public function modelFilter() {
+		return $this->provideFilter( PostFilter::class );
 	}
+
 	public function network() {
 		return $this->belongsTo( Network::class );
 	}
@@ -47,6 +47,6 @@ class Post extends BaseModel {
 	}
 
 	public function lineups() {
-		return $this->hasManyThrough( Lineup::class, Contact::class);
+		return $this->hasManyThrough( Lineup::class, Contact::class );
 	}
 }

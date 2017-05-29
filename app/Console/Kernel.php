@@ -4,7 +4,6 @@ namespace Social\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use Social\Console\Commands\MigrateReloadCommand;
 
 class Kernel extends ConsoleKernel {
 

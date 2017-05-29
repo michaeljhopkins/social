@@ -19,9 +19,10 @@ namespace Social;
  * @method static \Illuminate\Database\Query\Builder|\Social\Contact whereLastName( $value )
  * @method static \Illuminate\Database\Query\Builder|\Social\Contact whereUpdatedAt( $value )
  * @mixin \Eloquent
- * @property-read \Illuminate\Database\Eloquent\Collection|\Social\Lineup[] $lineups
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Social\Lineup[]   $lineups
  */
 class Contact extends BaseModel {
+
 	public function usernames() {
 		return $this->hasMany( Username::class );
 	}

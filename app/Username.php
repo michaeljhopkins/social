@@ -21,10 +21,12 @@ namespace Social;
  * @method static \Illuminate\Database\Query\Builder|\Social\Username whereNetworkId( $value )
  * @method static \Illuminate\Database\Query\Builder|\Social\Username whereUpdatedAt( $value )
  * @mixin \Eloquent
- * @property-read \Social\Network $network
+ * @property-read \Social\Network                                         $network
  */
 class Username extends BaseModel {
-	protected $hidden = ['created_at','updated_at','contact_id','network_id'];
+
+	protected $hidden = [ 'created_at', 'updated_at', 'contact_id', 'network_id' ];
+
 	public function network() {
 		return $this->belongsTo( Network::class );
 	}

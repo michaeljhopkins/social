@@ -7,20 +7,17 @@ use davestewart\sketchpad\config\SketchpadConfig;
  *
  * @label start here
  */
-class ExampleController
-{
+class ExampleController {
 
-    public function index (SketchpadConfig $config)
-    {
-        return view('sketchpad::example/index', compact('config'));
-    }
+	public function index( SketchpadConfig $config ) {
+		return view( 'sketchpad::example/index', compact( 'config' ) );
+	}
 
-    /**
-     * An example method, just to get you started...
-     */
-    public function welcome ($name = 'World')
-    {
-        echo "Hello $name";
-    }
+	/**
+	 * An example method, just to get you started...
+	 */
+	public function welcome( $name = 'World' ) {
+		echo "Hello $name";
+	}
 
 }
