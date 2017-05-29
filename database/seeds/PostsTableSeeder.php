@@ -30,7 +30,7 @@ class PostsTableSeeder extends Seeder
     }
 
 	private function createTweets(Username $u,Network $network, $f) {
-    	$u->posts()->create( ['content' => $f->paragraph,'network_id' => 2,'contact_id' => $u->contact_id]);
+    	$u->posts()->create( ['content' => $f->words(10,true),'network_id' => 2,'contact_id' => $u->contact_id]);
 	}
 
 	private function createFacebooks(Username $u,Network $network, $f) {
