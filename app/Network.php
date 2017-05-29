@@ -2,6 +2,8 @@
 
 namespace Social;
 
+use EloquentFilter\Filterable;
+
 /**
  * Social\Network
  *
@@ -19,7 +21,6 @@ namespace Social;
  * @mixin \Eloquent
  */
 class Network extends BaseModel {
-
 	public function usernames() {
 		return $this->hasMany( Username::class );
 	}
