@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/', 'LineupsController@index');
+Route::resource( 'lineups', 'LineupsController');
 
 Auth::routes();
 
