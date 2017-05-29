@@ -13,9 +13,8 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        $clients = Client::all();
         $f = Factory::create();
-        foreach ($clients as $c){
+        Client::all()->each(function($c) use ($f){
         	foreach(range(1,10) as $index){
         		$c->users()->create([
         			'name' => $f->name,
@@ -23,6 +22,6 @@ class UsersTableSeeder extends Seeder
 			        'password' => Hash::make( 'password')
 		        ]);
 	        }
-        }
+        });
     }
 }

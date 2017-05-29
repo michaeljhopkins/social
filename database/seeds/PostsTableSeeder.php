@@ -16,25 +16,26 @@ class PostsTableSeeder extends Seeder
     {
     	$f = Factory::create();
 	    $network = Network::find(2);
-	    $users = $network->usernames;
-
-	    foreach($users as $user) {
-		    /** @var Username $u */
-		    $u = $user;
-		    foreach ( range( 1, 5 ) as $index ) {
-			    $this->createTweets( $u, $network,$f );
-			    $this->createFacebooks( $u, $network,$f );
-			    $this->createInstas( $u, $network,$f );
-		    }
-	    }
+	    $network->usernames->each(function($user) use ($network,$f){
+		    $this->createTweets( $user, $network,$f );
+		    $this->createFacebooks( $user, $network,$f );
+		    $this->createInstas( $user, $network,$f );
+	    });
     }
 
 	private function createTweets(Username $u,Network $network, $f) {
-    	$u->posts()->create( ['content' => $f->words(10,true),'network_id' => 2,'contact_id' => $u->contact_id]);
+    	$u->posts()->create(
+    		['content' => $f->words(10,true),'network_id' => 2,'contact_id' => $u->contact_id],
+		    ['content' => $f->words(10,true),'network_id' => 2,'contact_id' => $u->contact_id],
+		    ['content' => $f->words(10,true),'network_id' => 2,'contact_id' => $u->contact_id]
+	    );
 	}
 
 	private function createFacebooks(Username $u,Network $network, $f) {
-    	$u->posts()->create( ['content' => $f->paragraph,'network_id' => 1,'contact_id' => $u->contact_id]);
+    	$u->posts()->create(
+    		['content' => $f->paragraph,'network_id' => 1,'contact_id' => $u->contact_id],
+		    ['content' => $f->paragraph,'network_id' => 1,'contact_id' => $u->contact_id]
+	    );
 	}
 
 	private function createInstas(Username $u,Network $network, $f) {

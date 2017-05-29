@@ -666,9 +666,8 @@ class ContactsAndUsernamesTableSeeder extends Seeder {
 			'identifyer' => 'RepDianeBlack'
 		] );
 
-		$contacts = Contact::all();
-		foreach($contacts as $contact){
+		Contact::all()->each(function($contact){
 			$contact->usernames()->create(['identifyer'=>'insta-'.$contact->first_name.'-'.$contact->last_name,'network_id' => 3]);
-		}
+		});
 	}
 }
