@@ -3,15 +3,16 @@
 namespace Social\Http\Controllers;
 
 use Illuminate\Http\Request;
+use function json;
 use Social\Lineup;
 use Social\Network;
+use Social\Post;
 
 class LineupsController extends Controller {
 
 	public function index() {
-		/** @var Network $network */
-		$network = Network::with( 'usernames.contact' )->first();
-		dd( $network->toArray() );
+		$view['lineup'] = Network::with( 'usernames.contact')->get()->toJson();
+		return view('searches.index',$view);
 	}
 
 	public function create() {
@@ -23,7 +24,9 @@ class LineupsController extends Controller {
 	}
 
 	public function show( Lineup $lineup ) {
-		//
+		$contactIds = $lineup->contacts->pluck( 'id')->toArray();
+		$return = Post::with('username','contact','network')->whereIn( 'contact_id', $contactIds)->get();
+		return $return->toJson();
 	}
 
 	public function edit( Lineup $lineup ) {
