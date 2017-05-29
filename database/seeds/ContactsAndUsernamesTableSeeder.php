@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Social\Contact;
+use Social\Username;
 
 class ContactsAndUsernamesTableSeeder extends Seeder {
 
@@ -664,5 +665,10 @@ class ContactsAndUsernamesTableSeeder extends Seeder {
 			'network_id' => 1,
 			'identifyer' => 'RepDianeBlack'
 		] );
+
+		$contacts = Contact::all();
+		foreach($contacts as $contact){
+			$contact->usernames()->create(['identifyer'=>'insta-'.$contact->first_name.'-'.$contact->last_name,'network_id' => 3]);
+		}
 	}
 }

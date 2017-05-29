@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
 	    $this->call( NetworksTableSeeder::class);
 	    $this->call( ContactsAndUsernamesTableSeeder::class);
 	    $this->call( LineupsTableSeeder::class);
-	    $this->call( UsernamesTableSeeder::class);
 	    $this->call( PostsTableSeeder::class);
     }
 }
