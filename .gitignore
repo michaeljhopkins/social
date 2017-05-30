@@ -7,6 +7,7 @@ Homestead.json
 .idea
 vendor
 node_modules
+.php_cs.cache
 .phpintel
 */.phpintel*
 /node_modules
@@ -14,3 +15,4 @@ node_modules
 /storage/*.key
 /.vagrant
 npm-debug.log
+/.scannerwork
