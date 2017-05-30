@@ -169,13 +169,7 @@ return [
 	    Laravel\Tinker\TinkerServiceProvider::class,
 	    Barryvdh\Debugbar\ServiceProvider::class,
 	    Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-	    davestewart\sketchpad\SketchpadServiceProvider::class,
 	    Spatie\CollectionMacros\CollectionMacroServiceProvider::class,
-	    EloquentFilter\ServiceProvider::class,
-
-
-	    #Lsrur\Inspector\InspectorServiceProvider::class,
-
 
 	    /*
 		 * Application Service Providers...

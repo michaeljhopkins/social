@@ -27,8 +27,4 @@ class Network extends BaseModel {
 	public function posts() {
 		return $this->hasMany( Post::class );
 	}
-
-	public function contacts() {
-		return $this->hasManyThrough( Contact::class, Username::class );
-	}
 }

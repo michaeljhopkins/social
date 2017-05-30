@@ -28,12 +28,4 @@ class Lineup extends BaseModel {
 	public function contacts() {
 		return $this->belongsToMany( Contact::class );
 	}
-
-	public function usernames() {
-		return $this->hasManyThrough( Username::class, Contact::class );
-	}
-
-	public function posts() {
-		return $this->hasManyThrough( Post::class, Contact::class );
-	}
 }

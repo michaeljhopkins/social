@@ -31,10 +31,6 @@ class Contact extends BaseModel {
 		return $this->hasMany( Post::class );
 	}
 
-	public function networks() {
-		return $this->hasManyThrough( Network::class, Username::class );
-	}
-
 	public function lineups() {
 		return $this->belongsToMany( Lineup::class );
 	}
