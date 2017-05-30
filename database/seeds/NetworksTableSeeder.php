@@ -12,9 +12,21 @@ class NetworksTableSeeder extends Seeder
      */
     public function run()
     {
-        Network::create(['name' => 'Facebook']);
-        Network::create(['name' => 'Twitter']);
-        Network::create(['name' => 'Instagram']);
-        Network::create(['name' => 'Friendster']);
+	    Network::create( [
+		    'name' => 'Facebook',
+		    'icon' => 'phpdebugbar-fa-facebook',
+		    'url'  => 'https://www.facebook.com/'
+	    ] );
+	    Network::create( [ 'name' => 'Twitter', 'icon' => 'phpdebugbar-fa-twitter', 'url' => 'https://twitter.com/' ] );
+	    Network::create( [
+		    'name' => 'Instagram',
+		    'icon' => 'phpdebugbar-fa-instagram',
+		    'url'  => 'https://www.instagram.com/'
+	    ] );
+	    Network::create( [
+		    'name' => 'Delicious',
+		    'icon' => 'phpdebugbar-fa-delicious',
+		    'url'  => 'https://del.icio.us/'
+	    ] );
     }
 }

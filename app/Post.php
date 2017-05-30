@@ -24,6 +24,8 @@ namespace Social;
  * @method static \Illuminate\Database\Query\Builder|\Social\Post whereUpdatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\Social\Post whereUsernameId($value)
  * @mixin \Eloquent
+ * @property string $permalink
+ * @method static \Illuminate\Database\Query\Builder|\Social\Post wherePermalink( $value )
  */
 class Post extends BaseModel {
 
