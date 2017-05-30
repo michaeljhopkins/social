@@ -2,23 +2,14 @@
 
 namespace Social\Http\Controllers;
 
+use Social\Post;
+
 class HomeController extends Controller {
 
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	public function __construct() {
-		$this->middleware( 'auth' );
-	}
-
-	/**
-	 * Show the application dashboard.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
 	public function index() {
-		return view( 'home' );
+		$posts         = Post::with( [ 'network', 'username', 'contact' ] )->latest()->get();
+		$view['posts'] = $posts;
+
+		return view( 'posts.index', $view );
 	}
 }
