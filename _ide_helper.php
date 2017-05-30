@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.4.23 on 2017-05-30.
+ * Generated for Laravel 5.4.24 on 2017-05-30.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -13169,8 +13169,8 @@ if (! function_exists('with')) {
          * Apply the callback's query changes if the given "value" is true.
          *
          * @param mixed $value
-         * @param \Closure $callback
-         * @param \Closure $default
+         * @param callable $callback
+         * @param callable $default
          * @return mixed 
          * @static 
          */
