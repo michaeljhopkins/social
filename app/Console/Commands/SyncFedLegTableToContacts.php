@@ -86,15 +86,11 @@ class SyncFedLegTableToContacts extends Command
     {
         foreach ($this->createdContacts as $c) {
             /* @var Contact $c */
-            $cfb = $c->usernames->where('network_id', 1)->first();
-            $fb = ($cfb) ? $cfb->identifyer : '';
-            $ctw = $c->usernames->where('network_id', 2)->first();
-            $tw = ($ctw) ? $ctw->identifyer : '';
             $temp = TempFed::create([
-                'first_name'       => $c->first_name,
-                'last_name'        => $c->last_name,
-                'facebook_id'      => $fb,
-                'twitter_username' => $tw,
+	            'first_name'       => $c->first_name,
+	            'last_name'        => $c->last_name,
+	            'facebook_id'      => ($c->usernames->where('network_id', 1)->first()) ? $c->usernames->where('network_id', 1)->first()->identifyer : '',
+	            'twitter_username' => ($c->usernames->where('network_id', 2)->first()) ? $c->usernames->where('network_id', 2)->first()->identifyer : '',
             ]);
         }
     }
