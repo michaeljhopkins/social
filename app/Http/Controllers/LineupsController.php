@@ -20,10 +20,14 @@ class LineupsController extends Controller
         /** @var Lineup $results */
         $results = $lineup->load('contacts', 'contacts.usernames.network');
         $contactIds = $results->contacts->pluck('id')->toArray();
-        $postList = Post::with('username', 'contact', 'network')->whereIn('contact_id', $contactIds)->get();
-        $view = ['lineup'   => $results,
-                        'posts'    => $postList,
-                        'contacts' => $lineup->contacts->sortBy('last_name'),
+        /** @var Post $postList */
+        $postList = Post::with('username', 'contact', 'network')->whereIn('contact_id', $contactIds);
+        $postList = (request()->has('network')) ? $postList->where('network_id',request('network')) : $postList;
+	    $postList = (request()->has('from') && request()->has('to')) ? $postList->whereBetween('created_at',[request('from'), request('to')]) : $postList;
+	    $view = [
+	    	'lineup'   => $results,
+		    'posts'    => $postList->get(),
+		    'contacts' => $lineup->contacts->sortBy('last_name'),
         ];
 
         return view('lineups.show', $view);
