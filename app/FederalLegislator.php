@@ -5,7 +5,7 @@ namespace Social;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Social\FederalLegislator
+ * Social\FederalLegislator.
  *
  * @property int $id
  * @property string $first_name
@@ -22,8 +22,12 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\Social\FederalLegislator whereTwitterUsername($value)
  * @method static \Illuminate\Database\Query\Builder|\Social\FederalLegislator whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $deleted_at
+ * @method static \Illuminate\Database\Query\Builder|\Social\FederalLegislator whereDeletedAt($value)
  */
 class FederalLegislator extends Model
 {
     protected $table = 'federal_legislators';
+    protected $guarded = [];
+    protected $hidden = [];
 }
