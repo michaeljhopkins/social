@@ -14,14 +14,14 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $f = Factory::create();
-        Client::all()->each(function($c) use ($f){
-        	foreach(range(1,10) as $index){
-        		$c->users()->create([
-        			'name' => $f->name,
-			        'email' => $f->email,
-			        'password' => Hash::make( 'password')
-		        ]);
-	        }
+        Client::all()->each(function ($c) use ($f) {
+            foreach (range(1, 10) as $index) {
+                $c->users()->create([
+                    'name' => $f->name,
+                    'email' => $f->email,
+                    'password' => Hash::make('password'),
+                ]);
+            }
         });
     }
 }

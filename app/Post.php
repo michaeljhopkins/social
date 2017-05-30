@@ -3,7 +3,7 @@
 namespace Social;
 
 /**
- * Social\Post
+ * Social\Post.
  *
  * @property int $id
  * @property int $username_id
@@ -27,19 +27,22 @@ namespace Social;
  * @property string $permalink
  * @method static \Illuminate\Database\Query\Builder|\Social\Post wherePermalink( $value )
  */
-class Post extends BaseModel {
+class Post extends BaseModel
+{
+    protected $hidden = ['created_at', 'updated_at', 'contact_id', 'username_id', 'network_id'];
 
-	protected $hidden = [ 'created_at', 'updated_at', 'contact_id', 'username_id', 'network_id' ];
+    public function network()
+    {
+        return $this->belongsTo(Network::class);
+    }
 
-	public function network() {
-		return $this->belongsTo( Network::class );
-	}
+    public function username()
+    {
+        return $this->belongsTo(Username::class);
+    }
 
-	public function username() {
-		return $this->belongsTo( Username::class );
-	}
-
-	public function contact() {
-		return $this->belongsTo( Contact::class );
-	}
+    public function contact()
+    {
+        return $this->belongsTo(Contact::class);
+    }
 }

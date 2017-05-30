@@ -12,7 +12,7 @@ return [
      |
      */
 
-	'enabled' => true,
+    'enabled' => true,
 
     /*
      |--------------------------------------------------------------------------
@@ -26,12 +26,12 @@ return [
      | can also be used. For PDO, run the package migrations first.
      |
      */
-	'storage' => [
+    'storage' => [
         'enabled'    => true,
         'driver'     => 'file', // redis, file, pdo, custom
         'path'       => storage_path('debugbar'), // For file driver
         'connection' => null,   // Leave null for default connection (Redis/PDO)
-        'provider'   => '' // Instance of StorageInterface for custom driver
+        'provider'   => '', // Instance of StorageInterface for custom driver
     ],
 
     /*
@@ -48,7 +48,7 @@ return [
      |
      */
 
-	'include_vendors' => true,
+    'include_vendors' => true,
 
     /*
      |--------------------------------------------------------------------------
@@ -60,7 +60,7 @@ return [
      |
      */
 
-	'capture_ajax' => true,
+    'capture_ajax' => true,
 
     /*
      |--------------------------------------------------------------------------
@@ -71,7 +71,7 @@ return [
      | Extension, without the server-side code. It uses Debugbar collectors instead.
      |
      */
-	'clockwork' => false,
+    'clockwork' => false,
 
     /*
      |--------------------------------------------------------------------------
@@ -82,7 +82,7 @@ return [
      |
      */
 
-	'collectors' => [
+    'collectors' => [
         'phpinfo'         => true,  // Php version
         'messages'        => true,  // Messages
         'time'            => true,  // Time Datalogger
@@ -114,7 +114,7 @@ return [
      |
      */
 
-	'options' => [
+    'options' => [
         'auth' => [
             'show_name' => false,   // Also show the users name/email in the debugbar
         ],
@@ -129,16 +129,16 @@ return [
             'hints'             => true,    // Show hints for common mistakes
         ],
         'mail' => [
-            'full_log' => false
+            'full_log' => false,
         ],
         'views' => [
             'data' => true,    //Note: Can slow down the application, because the data can be quite large..
         ],
         'route' => [
-            'label' => true  // show complete route on bar
+            'label' => true,  // show complete route on bar
         ],
         'logs' => [
-            'file' => null
+            'file' => null,
         ],
     ],
 
@@ -153,7 +153,7 @@ return [
      |
      */
 
-	'inject' => true,
+    'inject' => true,
 
     /*
      |--------------------------------------------------------------------------
@@ -165,6 +165,6 @@ return [
      | from trying to overcome bugs like this: http://trac.nginx.org/nginx/ticket/97
      |
      */
-	'route_prefix' => '_debugbar',
+    'route_prefix' => '_debugbar',
 
 ];

@@ -3,7 +3,7 @@
 namespace Social;
 
 /**
- * Social\Contact
+ * Social\Contact.
  *
  * @property int $id
  * @property string $first_name
@@ -21,17 +21,20 @@ namespace Social;
  * @method static \Illuminate\Database\Query\Builder|\Social\Contact whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class Contact extends BaseModel {
+class Contact extends BaseModel
+{
+    public function usernames()
+    {
+        return $this->hasMany(Username::class);
+    }
 
-	public function usernames() {
-		return $this->hasMany( Username::class );
-	}
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 
-	public function posts() {
-		return $this->hasMany( Post::class );
-	}
-
-	public function lineups() {
-		return $this->belongsToMany( Lineup::class );
-	}
+    public function lineups()
+    {
+        return $this->belongsToMany(Lineup::class);
+    }
 }

@@ -3,7 +3,7 @@
 namespace Social;
 
 /**
- * Social\Lineup
+ * Social\Lineup.
  *
  * @property int $id
  * @property string $name
@@ -19,12 +19,15 @@ namespace Social;
  * @method static \Illuminate\Database\Query\Builder|\Social\Lineup whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class Lineup extends BaseModel {
+class Lineup extends BaseModel
+{
+    public function clients()
+    {
+        return $this->belongsToMany(Client::class);
+    }
 
-	public function clients() {
-		return $this->belongsToMany( Client::class );
-	}
-	public function contacts() {
-		return $this->belongsToMany( Contact::class );
-	}
+    public function contacts()
+    {
+        return $this->belongsToMany(Contact::class);
+    }
 }

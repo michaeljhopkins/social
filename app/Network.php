@@ -3,7 +3,7 @@
 namespace Social;
 
 /**
- * Social\Network
+ * Social\Network.
  *
  * @property int $id
  * @property string $name
@@ -22,12 +22,15 @@ namespace Social;
  * @method static \Illuminate\Database\Query\Builder|\Social\Network whereIcon( $value )
  * @method static \Illuminate\Database\Query\Builder|\Social\Network whereUrl( $value )
  */
-class Network extends BaseModel {
-	public function usernames() {
-		return $this->hasMany( Username::class );
-	}
+class Network extends BaseModel
+{
+    public function usernames()
+    {
+        return $this->hasMany(Username::class);
+    }
 
-	public function posts() {
-		return $this->hasMany( Post::class );
-	}
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

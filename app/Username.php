@@ -3,7 +3,7 @@
 namespace Social;
 
 /**
- * Social\Username
+ * Social\Username.
  *
  * @property int $id
  * @property int $contact_id
@@ -22,19 +22,22 @@ namespace Social;
  * @method static \Illuminate\Database\Query\Builder|\Social\Username whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class Username extends BaseModel {
+class Username extends BaseModel
+{
+    protected $hidden = ['created_at', 'updated_at', 'contact_id', 'network_id'];
 
-	protected $hidden = [ 'created_at', 'updated_at', 'contact_id', 'network_id' ];
+    public function network()
+    {
+        return $this->belongsTo(Network::class);
+    }
 
-	public function network() {
-		return $this->belongsTo( Network::class );
-	}
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 
-	public function posts() {
-		return $this->hasMany( Post::class );
-	}
-
-	public function contact() {
-		return $this->belongsTo( Contact::class );
-	}
+    public function contact()
+    {
+        return $this->belongsTo(Contact::class);
+    }
 }

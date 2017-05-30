@@ -6,7 +6,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 /**
- * Social\User
+ * Social\User.
  *
  * @property int $id
  * @property int $client_id
@@ -28,34 +28,35 @@ use Illuminate\Notifications\Notifiable;
  * @method static \Illuminate\Database\Query\Builder|\Social\User whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class User extends Authenticatable {
+class User extends Authenticatable
+{
+    use Notifiable;
 
-	use Notifiable;
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+    ];
 
-	/**
-	 * The attributes that are mass assignable.
-	 *
-	 * @var array
-	 */
-	protected $fillable = [
-		'name',
-		'email',
-		'password',
-	];
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+        'created_at',
+        'updated_at',
+    ];
 
-	/**
-	 * The attributes that should be hidden for arrays.
-	 *
-	 * @var array
-	 */
-	protected $hidden = [
-		'password',
-		'remember_token',
-		'created_at',
-		'updated_at'
-	];
-
-	public function client() {
-		return $this->belongsTo( Client::class );
-	}
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
 }

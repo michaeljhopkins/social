@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->integer('network_id');
             $table->integer('contact_id');
             $table->text('content');
-	        $table->string( 'permalink' );
+            $table->string('permalink');
             $table->timestamps();
         });
     }

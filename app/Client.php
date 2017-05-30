@@ -3,7 +3,7 @@
 namespace Social;
 
 /**
- * Social\Client
+ * Social\Client.
  *
  * @property int $id
  * @property string $name
@@ -17,13 +17,15 @@ namespace Social;
  * @method static \Illuminate\Database\Query\Builder|\Social\Client whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class Client extends BaseModel {
+class Client extends BaseModel
+{
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 
-	public function users() {
-		return $this->hasMany( User::class );
-	}
-
-	public function lineups() {
-		return $this->belongsToMany( Lineup::class );
-	}
+    public function lineups()
+    {
+        return $this->belongsToMany(Lineup::class);
+    }
 }

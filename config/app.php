@@ -166,14 +166,14 @@ return [
         /*
          * Package Service Providers...
          */
-	    Laravel\Tinker\TinkerServiceProvider::class,
-	    Barryvdh\Debugbar\ServiceProvider::class,
-	    Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-	    Spatie\CollectionMacros\CollectionMacroServiceProvider::class,
+        Laravel\Tinker\TinkerServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Spatie\CollectionMacros\CollectionMacroServiceProvider::class,
 
-	    /*
-		 * Application Service Providers...
-		 */
+        /*
+         * Application Service Providers...
+         */
         Social\Providers\AppServiceProvider::class,
         Social\Providers\AuthServiceProvider::class,
         // Social\Providers\BroadcastServiceProvider::class,
@@ -228,7 +228,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
 
     ],
 
