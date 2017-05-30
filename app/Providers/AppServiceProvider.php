@@ -15,8 +15,8 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot() {
 		View::composer( '*', function ( $view ) {
-			$lineups = Lineup::all();
-			$view->with( 'lineups', $lineups );
+			/** @var \Illuminate\View\View|\Illuminate\Contracts\View\Factory $view */
+			$view->with( 'lineups', Lineup::all() );
 		} );
 	}
 
