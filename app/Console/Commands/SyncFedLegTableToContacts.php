@@ -8,6 +8,10 @@ use Social\Contact;
 use Social\TempFed;
 use DB;
 
+/**
+ * Class SyncFedLegTableToContacts
+ * @package Social\Console\Commands
+ */
 class SyncFedLegTableToContacts extends Command
 {
     /**
@@ -25,11 +29,10 @@ class SyncFedLegTableToContacts extends Command
     protected $description = 'Syncs the federal_legislature table into the contacts table';
     protected $createdContacts;
 
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
+	/**
+	 * Create a new command instance.
+	 *
+	 */
     public function __construct()
     {
         parent::__construct();
@@ -46,52 +49,49 @@ class SyncFedLegTableToContacts extends Command
         $results = $this->getDiffOfFedLegAndTempLeg();
         if ($results->count()) {
             $this->createNecessaryContactsAndUsernames($results);
-            $this->RecreateTempFeds();
+            $this->recreateTempFeds();
         }
     }
 
     public function getDiffOfFedLegAndTempLeg()
     {
-        $query = 'SELECT first_name,last_name,facebook_id,twitter_username FROM federal_legislators EXCEPT SELECT first_name,last_name,facebook_id,twitter_username FROM temp_feds';
-        $results = collect(DB::select(DB::raw($query)));
-
-        return $results;
+        $result = DB::select(DB::raw('SELECT first_name,last_name,facebook_id,twitter_username FROM federal_legislators EXCEPT SELECT first_name,last_name,facebook_id,twitter_username FROM temp_feds'));
+        return collect($result);
     }
 
     /**
      * @param $results
      */
-    public function createNecessaryContactsAndUsernames($results)
+    public function createNecessaryContactsAndUsernames(Collection $results)
     {
-        foreach ($results as $r) {
-            /** @var Contact $contact */
-            $c = Contact::create([
-                'first_name' => $r->first_name,
-                'last_name' => $r->last_name,
-            ]);
-            $c->usernames()->create([
-                'identifyer' => $r->facebook_id,
-                'network_id' => 1,
-            ]);
-            $c->usernames()->create([
-                'identifyer' => $r->twitter_username,
-                'network_id' => 2,
-            ]);
-            $contact = Contact::orderBy('id', 'desc')->with('usernames')->first();
-            $this->createdContacts->push($contact);
-        }
+    	$results->each(function($r){
+		    /** @var Contact $c */
+		    $c = Contact::create([
+			    'first_name' => $r->first_name,
+			    'last_name' => $r->last_name,
+		    ]);
+		    $c->usernames()->create([
+			    'identifyer' => $r->facebook_id,
+			    'network_id' => 1,
+		    ]);
+		    $c->usernames()->create([
+			    'identifyer' => $r->twitter_username,
+			    'network_id' => 2,
+		    ]);
+		    $this->createdContacts->push(Contact::orderBy('id', 'desc')->with('usernames')->first());
+	    });
     }
 
-    public function RecreateTempFeds()
+    public function recreateTempFeds()
     {
-        foreach ($this->createdContacts as $c) {
-            /* @var Contact $c */
-            $temp = TempFed::create([
-	            'first_name'       => $c->first_name,
-	            'last_name'        => $c->last_name,
-	            'facebook_id'      => ($c->usernames->where('network_id', 1)->first()) ? $c->usernames->where('network_id', 1)->first()->identifyer : '',
-	            'twitter_username' => ($c->usernames->where('network_id', 2)->first()) ? $c->usernames->where('network_id', 2)->first()->identifyer : '',
-            ]);
-        }
+    	$this->createdContacts->each(function($c){
+		    /* @var Contact $c */
+		    TempFed::create([
+			    'first_name'       => $c->first_name,
+			    'last_name'        => $c->last_name,
+			    'facebook_id'      => ($c->usernames->where('network_id', 1)->first()) ? $c->usernames->where('network_id', 1)->first()->identifyer : '',
+			    'twitter_username' => ($c->usernames->where('network_id', 2)->first()) ? $c->usernames->where('network_id', 2)->first()->identifyer : '',
+		    ]);
+	    });
     }
 }
