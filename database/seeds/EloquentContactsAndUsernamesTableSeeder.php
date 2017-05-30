@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Social\Contact;
 
-class ContactsAndUsernamesTableSeeder extends Seeder
+class EloquentContactsAndUsernamesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -608,62 +608,6 @@ class ContactsAndUsernamesTableSeeder extends Seeder
         $c->usernames()->create([
             'network_id' => 1,
             'identifyer' => 'SenBennetCo',
-        ]);
-
-        /** @var \Social\Contact $c * */
-        $c = Contact::create([
-            'last_name'  => 'Bilirakis',
-            'first_name' => 'Gus',
-        ]);
-        $c->usernames()->create([
-            'network_id' => 2,
-            'identifyer' => 'GusBilirakis',
-        ]);
-        $c->usernames()->create([
-            'network_id' => 1,
-            'identifyer' => 'RepGusBilirakis',
-        ]);
-
-        /** @var \Social\Contact $c * */
-        $c = Contact::create([
-            'last_name'  => 'Bishop',
-            'first_name' => 'Rob',
-        ]);
-        $c->usernames()->create([
-            'network_id' => 2,
-            'identifyer' => 'RepRobBishop',
-        ]);
-        $c->usernames()->create([
-            'network_id' => 1,
-            'identifyer' => 'RepRobBishop',
-        ]);
-
-        /** @var \Social\Contact $c * */
-        $c = Contact::create([
-            'last_name'  => 'Bishop',
-            'first_name' => 'Sanford',
-        ]);
-        $c->usernames()->create([
-            'network_id' => 2,
-            'identifyer' => 'sanfordbishop',
-        ]);
-        $c->usernames()->create([
-            'network_id' => 1,
-            'identifyer' => 'SanfordBishop',
-        ]);
-
-        /** @var \Social\Contact $c * */
-        $c = Contact::create([
-            'last_name'  => 'Black',
-            'first_name' => 'Diane',
-        ]);
-        $c->usernames()->create([
-            'network_id' => 2,
-            'identifyer' => 'DianeBlackTN06',
-        ]);
-        $c->usernames()->create([
-            'network_id' => 1,
-            'identifyer' => 'RepDianeBlack',
         ]);
 
         Contact::all()->each(function ($contact) {

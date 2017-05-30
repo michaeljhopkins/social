@@ -1,31 +1,45 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Social\Contact;
-use Social\Lineup;
 
 class LineupsTableSeeder extends Seeder
 {
+
     /**
-     * Run the database seeds.
+     * Auto generated seed file
      *
      * @return void
      */
     public function run()
     {
-        /** @var Lineup $l */
-        $l = Lineup::create(['name' => 'first list']);
-        $contacts = Contact::inRandomOrder()->limit(10)->get();
-        $l->contacts()->attach($contacts);
+        
 
-        /** @var Lineup $l */
-        $l = Lineup::create(['name' => 'second list']);
-        $contacts = Contact::inRandomOrder()->limit(3)->get();
-        $l->contacts()->attach($contacts);
-
-        /** @var Lineup $l */
-        $l = Lineup::create(['name' => 'third list']);
-        $contacts = Contact::inRandomOrder()->limit(20)->get();
-        $l->contacts()->attach($contacts);
+        \DB::table('lineups')->delete();
+        
+        \DB::table('lineups')->insert(array (
+            0 => 
+            array (
+                'name' => 'first list',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            1 => 
+            array (
+                'name' => 'second list',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            2 => 
+            array (
+                'name' => 'third list',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+        ));
+        
+        
     }
 }

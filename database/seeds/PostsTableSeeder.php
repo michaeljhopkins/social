@@ -1,72 +1,1443 @@
 <?php
 
-use Faker\Factory;
 use Illuminate\Database\Seeder;
-use Social\Network;
-use Social\Username;
 
 class PostsTableSeeder extends Seeder
 {
+
     /**
-     * Run the database seeds.
+     * Auto generated seed file
      *
      * @return void
      */
     public function run()
     {
-        $f = Factory::create();
-        $network = Network::find(2);
-        $network->usernames->each(function ($user) use ($network, $f) {
-            $this->createTweets($user, $network, $f);
-            $this->createFacebooks($user, $network, $f);
-            $this->createInstas($user, $network, $f);
-        });
-    }
+        
 
-    private function createTweets(Username $u, Network $network, $f)
-    {
-        $u->posts()->create([
-            'content'    => $f->words(10, true),
-            'network_id' => 2,
-            'contact_id' => $u->contact_id,
-            'permalink'  => 'https://twitter.com/laracasts/status/823929504536084480',
-        ], [
-            'content'    => $f->words(10, true),
-            'network_id' => 2,
-            'contact_id' => $u->contact_id,
-            'permalink'  => 'https://twitter.com/laracasts/status/823929504536084480',
-        ], [
-                'content'    => $f->words(10, true),
+        \DB::table('posts')->delete();
+        
+        \DB::table('posts')->insert(array (
+            0 => 
+            array (
+                'username_id' => 2,
                 'network_id' => 2,
-                'contact_id' => $u->contact_id,
-                'permalink'  => 'https://twitter.com/laracasts/status/823929504536084480',
-            ]
-        );
-    }
-
-    private function createFacebooks(Username $u, Network $network, $f)
-    {
-        $u->posts()->create([
-            'content'    => $f->paragraph,
-            'network_id' => 1,
-            'contact_id' => $u->contact_id,
-            'permalink'  => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
-        ], [
-                'content'    => $f->paragraph,
+                'contact_id' => 2,
+                'content' => 'omnis harum molestiae doloremque dolor qui cumque reprehenderit necessitatibus molestiae',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            1 => 
+            array (
+                'username_id' => 2,
                 'network_id' => 1,
-                'contact_id' => $u->contact_id,
-                'permalink'  => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
-            ]
-        );
-    }
-
-    private function createInstas(Username $u, Network $network, $f)
-    {
-        $u->posts()->create([
-            'content'    => $f->imageUrl(150, 100),
-            'network_id' => 3,
-            'contact_id' => $u->contact_id,
-            'permalink'  => 'https://www.instagram.com/p/-x98zmDS5l/',
-        ]);
+                'contact_id' => 2,
+                'content' => 'Ut commodi eligendi consequatur quia. Beatae iusto eos atque et. Exercitationem necessitatibus tenetur eaque autem maxime sed officiis odio. Aperiam et quo eos.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            2 => 
+            array (
+                'username_id' => 2,
+                'network_id' => 3,
+                'contact_id' => 2,
+                'content' => 'http://lorempixel.com/150/100/?55999',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            3 => 
+            array (
+                'username_id' => 4,
+                'network_id' => 2,
+                'contact_id' => 3,
+                'content' => 'inventore quisquam tempora consequatur molestias libero laborum dolore et modi',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            4 => 
+            array (
+                'username_id' => 4,
+                'network_id' => 1,
+                'contact_id' => 3,
+                'content' => 'Dolorem nulla illo ea vel aliquid aut ipsam. Error qui recusandae eum atque temporibus. Tempora facilis sed quidem accusamus placeat eveniet.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            5 => 
+            array (
+                'username_id' => 4,
+                'network_id' => 3,
+                'contact_id' => 3,
+                'content' => 'http://lorempixel.com/150/100/?24966',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            6 => 
+            array (
+                'username_id' => 6,
+                'network_id' => 2,
+                'contact_id' => 4,
+                'content' => 'ipsa aut magnam eaque et nobis rerum mollitia dolorum temporibus',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            7 => 
+            array (
+                'username_id' => 6,
+                'network_id' => 1,
+                'contact_id' => 4,
+                'content' => 'Aut libero quia ut inventore et. Recusandae ut aperiam est et quia fugit.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            8 => 
+            array (
+                'username_id' => 6,
+                'network_id' => 3,
+                'contact_id' => 4,
+                'content' => 'http://lorempixel.com/150/100/?14943',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            9 => 
+            array (
+                'username_id' => 8,
+                'network_id' => 2,
+                'contact_id' => 5,
+                'content' => 'ut magni nemo ea et impedit saepe quasi dolores veniam',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            10 => 
+            array (
+                'username_id' => 8,
+                'network_id' => 1,
+                'contact_id' => 5,
+                'content' => 'Ullam animi minus amet dolorem deserunt. Veritatis ducimus ut incidunt omnis et. Eos deleniti cum quasi.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            11 => 
+            array (
+                'username_id' => 8,
+                'network_id' => 3,
+                'contact_id' => 5,
+                'content' => 'http://lorempixel.com/150/100/?60992',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            12 => 
+            array (
+                'username_id' => 10,
+                'network_id' => 2,
+                'contact_id' => 6,
+                'content' => 'sequi aspernatur et facere dolorem commodi recusandae consequuntur natus veniam',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            13 => 
+            array (
+                'username_id' => 10,
+                'network_id' => 1,
+                'contact_id' => 6,
+                'content' => 'Nobis animi voluptatem itaque exercitationem optio est voluptate quasi. Assumenda magnam earum culpa veniam quidem eligendi eum. Labore eos nam sapiente nihil distinctio ut recusandae. Dolorem omnis unde dolore.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            14 => 
+            array (
+                'username_id' => 10,
+                'network_id' => 3,
+                'contact_id' => 6,
+                'content' => 'http://lorempixel.com/150/100/?54743',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            15 => 
+            array (
+                'username_id' => 12,
+                'network_id' => 2,
+                'contact_id' => 7,
+                'content' => 'a est et ipsa dolor unde delectus qui atque provident',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            16 => 
+            array (
+                'username_id' => 12,
+                'network_id' => 1,
+                'contact_id' => 7,
+                'content' => 'Tenetur omnis qui ad placeat itaque libero laudantium ea. Voluptatum dignissimos officia dolor cumque possimus ab illum. Ex recusandae iure facere. Quam architecto quia aut nihil quibusdam.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            17 => 
+            array (
+                'username_id' => 12,
+                'network_id' => 3,
+                'contact_id' => 7,
+                'content' => 'http://lorempixel.com/150/100/?96494',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            18 => 
+            array (
+                'username_id' => 14,
+                'network_id' => 2,
+                'contact_id' => 8,
+                'content' => 'dolor provident repellendus incidunt dolores laborum recusandae soluta qui eius',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            19 => 
+            array (
+                'username_id' => 14,
+                'network_id' => 1,
+                'contact_id' => 8,
+                'content' => 'Qui inventore molestiae unde officiis in. Totam officiis quia quisquam voluptatum minus labore. Suscipit veniam sed omnis rerum possimus. Molestias non et error autem animi enim quos.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            20 => 
+            array (
+                'username_id' => 14,
+                'network_id' => 3,
+                'contact_id' => 8,
+                'content' => 'http://lorempixel.com/150/100/?37557',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            21 => 
+            array (
+                'username_id' => 16,
+                'network_id' => 2,
+                'contact_id' => 10,
+                'content' => 'consectetur sed est optio eum atque impedit enim quas magni',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            22 => 
+            array (
+                'username_id' => 16,
+                'network_id' => 1,
+                'contact_id' => 10,
+                'content' => 'Amet provident placeat voluptatibus. Hic quae ipsum id et omnis dolores. Sed omnis rerum atque sapiente odit id.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            23 => 
+            array (
+                'username_id' => 16,
+                'network_id' => 3,
+                'contact_id' => 10,
+                'content' => 'http://lorempixel.com/150/100/?78589',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            24 => 
+            array (
+                'username_id' => 18,
+                'network_id' => 2,
+                'contact_id' => 11,
+                'content' => 'nihil fugit ipsum quis nam eius officiis veritatis quod porro',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            25 => 
+            array (
+                'username_id' => 18,
+                'network_id' => 1,
+                'contact_id' => 11,
+                'content' => 'Quasi velit aliquid nisi doloribus consectetur dolor odio. Enim occaecati fuga fugit animi fugit fugit. Cumque cupiditate ea modi et alias ab.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            26 => 
+            array (
+                'username_id' => 18,
+                'network_id' => 3,
+                'contact_id' => 11,
+                'content' => 'http://lorempixel.com/150/100/?83192',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            27 => 
+            array (
+                'username_id' => 21,
+                'network_id' => 2,
+                'contact_id' => 13,
+                'content' => 'vitae ut assumenda mollitia veniam et non sunt sint quia',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            28 => 
+            array (
+                'username_id' => 21,
+                'network_id' => 1,
+                'contact_id' => 13,
+                'content' => 'Explicabo id debitis excepturi in ex ipsam. Iure quis natus accusantium eveniet. Nam totam tempora sit cumque consectetur maiores et quam. Rerum culpa laborum velit laboriosam.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            29 => 
+            array (
+                'username_id' => 21,
+                'network_id' => 3,
+                'contact_id' => 13,
+                'content' => 'http://lorempixel.com/150/100/?75508',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            30 => 
+            array (
+                'username_id' => 24,
+                'network_id' => 2,
+                'contact_id' => 15,
+                'content' => 'nobis autem eos eos sed iusto aliquam molestiae nobis quae',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            31 => 
+            array (
+                'username_id' => 24,
+                'network_id' => 1,
+                'contact_id' => 15,
+                'content' => 'Aliquid quasi ex labore. Non maxime nesciunt eveniet alias minus. Voluptas sint eaque animi.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            32 => 
+            array (
+                'username_id' => 24,
+                'network_id' => 3,
+                'contact_id' => 15,
+                'content' => 'http://lorempixel.com/150/100/?38307',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            33 => 
+            array (
+                'username_id' => 26,
+                'network_id' => 2,
+                'contact_id' => 16,
+                'content' => 'qui cumque suscipit debitis voluptas molestiae tempora repellendus voluptas quo',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            34 => 
+            array (
+                'username_id' => 26,
+                'network_id' => 1,
+                'contact_id' => 16,
+                'content' => 'Magnam fugiat est ratione quam cum. Ratione temporibus accusantium facere eos tenetur est.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            35 => 
+            array (
+                'username_id' => 26,
+                'network_id' => 3,
+                'contact_id' => 16,
+                'content' => 'http://lorempixel.com/150/100/?76560',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            36 => 
+            array (
+                'username_id' => 28,
+                'network_id' => 2,
+                'contact_id' => 17,
+                'content' => 'inventore ipsum totam et temporibus voluptates ea quo ad aliquid',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            37 => 
+            array (
+                'username_id' => 28,
+                'network_id' => 1,
+                'contact_id' => 17,
+                'content' => 'Sed libero necessitatibus tempora maiores odio maxime odit. Et asperiores eaque ut ea alias. Quos neque expedita architecto quasi sint occaecati quis.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            38 => 
+            array (
+                'username_id' => 28,
+                'network_id' => 3,
+                'contact_id' => 17,
+                'content' => 'http://lorempixel.com/150/100/?26650',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            39 => 
+            array (
+                'username_id' => 30,
+                'network_id' => 2,
+                'contact_id' => 18,
+                'content' => 'dignissimos est error minus cumque nulla mollitia officia cumque officia',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            40 => 
+            array (
+                'username_id' => 30,
+                'network_id' => 1,
+                'contact_id' => 18,
+                'content' => 'Eius architecto non debitis id quod in iste. Et aut nemo quas nesciunt ratione alias omnis consequatur. Reiciendis beatae ab accusamus aut provident. Consequatur accusantium sequi exercitationem maiores vel.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            41 => 
+            array (
+                'username_id' => 30,
+                'network_id' => 3,
+                'contact_id' => 18,
+                'content' => 'http://lorempixel.com/150/100/?61557',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            42 => 
+            array (
+                'username_id' => 32,
+                'network_id' => 2,
+                'contact_id' => 19,
+                'content' => 'dolores libero maxime quod optio dolor eius voluptas odit velit',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            43 => 
+            array (
+                'username_id' => 32,
+                'network_id' => 1,
+                'contact_id' => 19,
+                'content' => 'Ut fuga nostrum animi maiores ex sapiente voluptatem. Veniam aut aspernatur cumque harum ut. Aliquam ex laboriosam excepturi.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            44 => 
+            array (
+                'username_id' => 32,
+                'network_id' => 3,
+                'contact_id' => 19,
+                'content' => 'http://lorempixel.com/150/100/?57825',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            45 => 
+            array (
+                'username_id' => 35,
+                'network_id' => 2,
+                'contact_id' => 21,
+                'content' => 'maiores sed nihil placeat est est et est sed deserunt',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            46 => 
+            array (
+                'username_id' => 35,
+                'network_id' => 1,
+                'contact_id' => 21,
+                'content' => 'Aut dolores eaque magnam. Omnis hic ducimus mollitia cupiditate fugiat et. Vero vel enim est qui consectetur et.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            47 => 
+            array (
+                'username_id' => 35,
+                'network_id' => 3,
+                'contact_id' => 21,
+                'content' => 'http://lorempixel.com/150/100/?95092',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            48 => 
+            array (
+                'username_id' => 37,
+                'network_id' => 2,
+                'contact_id' => 22,
+                'content' => 'ullam optio neque quia minus sunt ea expedita numquam delectus',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            49 => 
+            array (
+                'username_id' => 37,
+                'network_id' => 1,
+                'contact_id' => 22,
+                'content' => 'Totam numquam non animi reiciendis inventore voluptas est. Amet tempore vel et dolore ut. Laudantium impedit cupiditate vel aut velit excepturi dolor.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            50 => 
+            array (
+                'username_id' => 37,
+                'network_id' => 3,
+                'contact_id' => 22,
+                'content' => 'http://lorempixel.com/150/100/?87710',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            51 => 
+            array (
+                'username_id' => 39,
+                'network_id' => 2,
+                'contact_id' => 23,
+                'content' => 'aut odit quos facilis eaque voluptas asperiores molestiae doloribus qui',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            52 => 
+            array (
+                'username_id' => 39,
+                'network_id' => 1,
+                'contact_id' => 23,
+                'content' => 'Odio est quaerat sed amet quisquam architecto. Mollitia voluptatem dolores incidunt et. Blanditiis sequi placeat quia repudiandae facilis. Veritatis voluptates sed rerum fugiat.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            53 => 
+            array (
+                'username_id' => 39,
+                'network_id' => 3,
+                'contact_id' => 23,
+                'content' => 'http://lorempixel.com/150/100/?28392',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            54 => 
+            array (
+                'username_id' => 41,
+                'network_id' => 2,
+                'contact_id' => 24,
+                'content' => 'eos ipsa odio minima voluptatem debitis et omnis sed hic',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            55 => 
+            array (
+                'username_id' => 41,
+                'network_id' => 1,
+                'contact_id' => 24,
+                'content' => 'Quos hic dolorem ut quas. Laboriosam vel vero iste nisi quae natus ab. Animi similique autem aut quasi.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            56 => 
+            array (
+                'username_id' => 41,
+                'network_id' => 3,
+                'contact_id' => 24,
+                'content' => 'http://lorempixel.com/150/100/?67142',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            57 => 
+            array (
+                'username_id' => 43,
+                'network_id' => 2,
+                'contact_id' => 25,
+                'content' => 'nemo praesentium mollitia ratione nam quaerat aut architecto eum in',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            58 => 
+            array (
+                'username_id' => 43,
+                'network_id' => 1,
+                'contact_id' => 25,
+                'content' => 'Eaque numquam assumenda odio non sunt. Eveniet quae rerum impedit sed ducimus placeat ad. Ullam et repellendus ut.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            59 => 
+            array (
+                'username_id' => 43,
+                'network_id' => 3,
+                'contact_id' => 25,
+                'content' => 'http://lorempixel.com/150/100/?36834',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            60 => 
+            array (
+                'username_id' => 45,
+                'network_id' => 2,
+                'contact_id' => 26,
+                'content' => 'odio natus aperiam nulla molestias eos eveniet repudiandae ut ad',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            61 => 
+            array (
+                'username_id' => 45,
+                'network_id' => 1,
+                'contact_id' => 26,
+                'content' => 'Voluptas voluptas et qui. Tempora dolore quam odit odio. Vitae saepe voluptas veritatis vel consequatur quia perferendis qui. Quam libero est omnis pariatur sunt.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            62 => 
+            array (
+                'username_id' => 45,
+                'network_id' => 3,
+                'contact_id' => 26,
+                'content' => 'http://lorempixel.com/150/100/?96411',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            63 => 
+            array (
+                'username_id' => 47,
+                'network_id' => 2,
+                'contact_id' => 27,
+                'content' => 'blanditiis occaecati occaecati eos excepturi autem nulla et sint accusamus',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            64 => 
+            array (
+                'username_id' => 47,
+                'network_id' => 1,
+                'contact_id' => 27,
+                'content' => 'Quos cupiditate ex similique eum et id nemo. Aut unde dolor fuga ab rerum. Et qui eum aut dolores mollitia.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            65 => 
+            array (
+                'username_id' => 47,
+                'network_id' => 3,
+                'contact_id' => 27,
+                'content' => 'http://lorempixel.com/150/100/?86913',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            66 => 
+            array (
+                'username_id' => 49,
+                'network_id' => 2,
+                'contact_id' => 28,
+                'content' => 'id aut doloremque iste autem provident atque dolor eveniet praesentium',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            67 => 
+            array (
+                'username_id' => 49,
+                'network_id' => 1,
+                'contact_id' => 28,
+                'content' => 'Maiores eum explicabo itaque officiis autem. Et sunt nemo eum expedita. Earum earum aperiam ea ad consequatur ut voluptas. Atque voluptatem qui nobis harum consequatur.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            68 => 
+            array (
+                'username_id' => 49,
+                'network_id' => 3,
+                'contact_id' => 28,
+                'content' => 'http://lorempixel.com/150/100/?88286',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            69 => 
+            array (
+                'username_id' => 51,
+                'network_id' => 2,
+                'contact_id' => 29,
+                'content' => 'est nisi voluptas accusamus omnis quae accusantium sed rerum eum',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            70 => 
+            array (
+                'username_id' => 51,
+                'network_id' => 1,
+                'contact_id' => 29,
+                'content' => 'Velit inventore repudiandae dolorem dignissimos natus. Nihil beatae ut ab. Enim optio saepe dolor accusantium qui dolor et. Sint ipsam et iusto vitae et quos necessitatibus.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            71 => 
+            array (
+                'username_id' => 51,
+                'network_id' => 3,
+                'contact_id' => 29,
+                'content' => 'http://lorempixel.com/150/100/?55045',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            72 => 
+            array (
+                'username_id' => 54,
+                'network_id' => 2,
+                'contact_id' => 31,
+                'content' => 'non hic ea voluptatem fugiat quaerat illo eum est impedit',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            73 => 
+            array (
+                'username_id' => 54,
+                'network_id' => 1,
+                'contact_id' => 31,
+                'content' => 'Quo et sed voluptas temporibus velit quaerat fugiat temporibus. Commodi dolores aspernatur cum occaecati. Repudiandae nobis dolore nihil voluptatum voluptates et dignissimos.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            74 => 
+            array (
+                'username_id' => 54,
+                'network_id' => 3,
+                'contact_id' => 31,
+                'content' => 'http://lorempixel.com/150/100/?64405',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            75 => 
+            array (
+                'username_id' => 56,
+                'network_id' => 2,
+                'contact_id' => 32,
+                'content' => 'aliquid sunt consequatur optio nulla et sit eum earum deleniti',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            76 => 
+            array (
+                'username_id' => 56,
+                'network_id' => 1,
+                'contact_id' => 32,
+                'content' => 'Eveniet amet similique dolores. Qui error voluptates velit corrupti repellat perspiciatis architecto sunt. Deleniti animi architecto deleniti consectetur qui dolore eveniet. Sed sunt et vero error rem quia.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            77 => 
+            array (
+                'username_id' => 56,
+                'network_id' => 3,
+                'contact_id' => 32,
+                'content' => 'http://lorempixel.com/150/100/?62164',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            78 => 
+            array (
+                'username_id' => 58,
+                'network_id' => 2,
+                'contact_id' => 33,
+                'content' => 'quos est libero voluptatem optio omnis quia ipsam deleniti omnis',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            79 => 
+            array (
+                'username_id' => 58,
+                'network_id' => 1,
+                'contact_id' => 33,
+                'content' => 'Consequatur velit nisi qui quia nulla alias. Quibusdam veritatis explicabo autem quo ut. Rerum et id totam numquam. Nam veritatis in aut sint quia dolorum et.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            80 => 
+            array (
+                'username_id' => 58,
+                'network_id' => 3,
+                'contact_id' => 33,
+                'content' => 'http://lorempixel.com/150/100/?53648',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            81 => 
+            array (
+                'username_id' => 60,
+                'network_id' => 2,
+                'contact_id' => 34,
+                'content' => 'enim magni reiciendis ea iusto ut voluptatem eaque id fuga',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            82 => 
+            array (
+                'username_id' => 60,
+                'network_id' => 1,
+                'contact_id' => 34,
+                'content' => 'Earum adipisci ab odit maxime corrupti nemo fugit repellendus. Laudantium dolorem aut quis doloremque. Voluptatum sequi ut saepe est. Suscipit sunt voluptates nam atque perferendis dolor eos.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            83 => 
+            array (
+                'username_id' => 60,
+                'network_id' => 3,
+                'contact_id' => 34,
+                'content' => 'http://lorempixel.com/150/100/?75800',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            84 => 
+            array (
+                'username_id' => 62,
+                'network_id' => 2,
+                'contact_id' => 35,
+                'content' => 'quo error eos dolorum qui repellendus vel quis architecto dicta',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            85 => 
+            array (
+                'username_id' => 62,
+                'network_id' => 1,
+                'contact_id' => 35,
+                'content' => 'Assumenda velit sed ipsum quis fuga quia amet. Quidem omnis nisi asperiores et. Quisquam non vel quo et reiciendis sint ea.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            86 => 
+            array (
+                'username_id' => 62,
+                'network_id' => 3,
+                'contact_id' => 35,
+                'content' => 'http://lorempixel.com/150/100/?24069',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            87 => 
+            array (
+                'username_id' => 64,
+                'network_id' => 2,
+                'contact_id' => 36,
+                'content' => 'sequi ratione enim corporis et magni esse voluptatem est consequatur',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            88 => 
+            array (
+                'username_id' => 64,
+                'network_id' => 1,
+                'contact_id' => 36,
+                'content' => 'Voluptatibus natus rerum libero voluptatibus dicta in porro. Eos corrupti maiores quidem. Quisquam dolores sed ab rerum et molestias numquam. Veritatis consequatur sit aut vel. Sit vel sint autem et nobis.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            89 => 
+            array (
+                'username_id' => 64,
+                'network_id' => 3,
+                'contact_id' => 36,
+                'content' => 'http://lorempixel.com/150/100/?99126',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            90 => 
+            array (
+                'username_id' => 66,
+                'network_id' => 2,
+                'contact_id' => 37,
+                'content' => 'culpa dolorem eos odit dignissimos fugit non ex et possimus',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            91 => 
+            array (
+                'username_id' => 66,
+                'network_id' => 1,
+                'contact_id' => 37,
+                'content' => 'Excepturi sequi autem modi architecto sit. Quia laborum et excepturi cupiditate voluptatem. Dolores est sit ullam doloribus quia quas nam. Eaque dolore praesentium quis ratione sed eligendi.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            92 => 
+            array (
+                'username_id' => 66,
+                'network_id' => 3,
+                'contact_id' => 37,
+                'content' => 'http://lorempixel.com/150/100/?63719',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            93 => 
+            array (
+                'username_id' => 68,
+                'network_id' => 2,
+                'contact_id' => 38,
+                'content' => 'voluptates expedita sed distinctio molestiae est ea aut molestiae consectetur',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            94 => 
+            array (
+                'username_id' => 68,
+                'network_id' => 1,
+                'contact_id' => 38,
+                'content' => 'Illo sed vitae eum harum. Porro voluptatem non eum ullam est quis. Accusantium incidunt dolore reprehenderit sint dolorem.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            95 => 
+            array (
+                'username_id' => 68,
+                'network_id' => 3,
+                'contact_id' => 38,
+                'content' => 'http://lorempixel.com/150/100/?21948',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            96 => 
+            array (
+                'username_id' => 70,
+                'network_id' => 2,
+                'contact_id' => 39,
+                'content' => 'rerum quisquam ipsum non voluptas quia enim animi qui error',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            97 => 
+            array (
+                'username_id' => 70,
+                'network_id' => 1,
+                'contact_id' => 39,
+                'content' => 'Quas animi fuga et et. Quidem sint fuga ea atque ut minima eveniet. Maxime rerum id neque cum. Qui aut reiciendis adipisci et deleniti dolor. Sit voluptate odit quia ullam est aliquam.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            98 => 
+            array (
+                'username_id' => 70,
+                'network_id' => 3,
+                'contact_id' => 39,
+                'content' => 'http://lorempixel.com/150/100/?24665',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            99 => 
+            array (
+                'username_id' => 72,
+                'network_id' => 2,
+                'contact_id' => 40,
+                'content' => 'id minima ea nihil consequuntur dolor sed enim veniam sed',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            100 => 
+            array (
+                'username_id' => 72,
+                'network_id' => 1,
+                'contact_id' => 40,
+                'content' => 'Aperiam quas impedit provident neque pariatur ex. Reprehenderit veritatis sapiente molestias possimus asperiores. Velit quia vitae asperiores provident soluta nostrum. Dicta deserunt et molestias inventore.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            101 => 
+            array (
+                'username_id' => 72,
+                'network_id' => 3,
+                'contact_id' => 40,
+                'content' => 'http://lorempixel.com/150/100/?30979',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:30',
+                'updated_at' => '2017-05-30 18:40:30',
+            ),
+            102 => 
+            array (
+                'username_id' => 73,
+                'network_id' => 2,
+                'contact_id' => 41,
+                'content' => 'quo adipisci et aliquid repellat qui dolores quia sunt repellat',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            103 => 
+            array (
+                'username_id' => 73,
+                'network_id' => 1,
+                'contact_id' => 41,
+                'content' => 'Optio officia fugiat accusantium dolores. Officiis dolorem unde quis quo dignissimos et. Eligendi officia ut expedita similique. Dolores quidem quis omnis earum est voluptatem est.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            104 => 
+            array (
+                'username_id' => 73,
+                'network_id' => 3,
+                'contact_id' => 41,
+                'content' => 'http://lorempixel.com/150/100/?39245',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            105 => 
+            array (
+                'username_id' => 75,
+                'network_id' => 2,
+                'contact_id' => 42,
+                'content' => 'quia velit amet explicabo animi commodi a sint iusto quos',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            106 => 
+            array (
+                'username_id' => 75,
+                'network_id' => 1,
+                'contact_id' => 42,
+                'content' => 'Sit aut praesentium sit in optio omnis. Et accusantium fugit ullam quas. Commodi at quis fugiat harum ea. Consequatur est magni voluptatem consectetur quam.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            107 => 
+            array (
+                'username_id' => 75,
+                'network_id' => 3,
+                'contact_id' => 42,
+                'content' => 'http://lorempixel.com/150/100/?84942',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            108 => 
+            array (
+                'username_id' => 77,
+                'network_id' => 2,
+                'contact_id' => 43,
+                'content' => 'iusto fugiat ut iusto saepe dolorum laudantium earum dolorem ut',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            109 => 
+            array (
+                'username_id' => 77,
+                'network_id' => 1,
+                'contact_id' => 43,
+                'content' => 'Explicabo esse numquam vel sed at. Qui illo temporibus delectus officiis numquam corporis autem. Magnam quis adipisci veniam qui aut assumenda. Qui dolor vel qui dicta vel.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            110 => 
+            array (
+                'username_id' => 77,
+                'network_id' => 3,
+                'contact_id' => 43,
+                'content' => 'http://lorempixel.com/150/100/?78500',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            111 => 
+            array (
+                'username_id' => 79,
+                'network_id' => 2,
+                'contact_id' => 44,
+                'content' => 'ipsum aut nemo in aut quod sed molestiae voluptatem qui',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            112 => 
+            array (
+                'username_id' => 79,
+                'network_id' => 1,
+                'contact_id' => 44,
+                'content' => 'Eius ipsam non atque aut odio sed. Voluptate sed modi voluptate sed repudiandae dolor. Aspernatur officia incidunt harum corrupti id. Praesentium officia voluptatum voluptates quia cum.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            113 => 
+            array (
+                'username_id' => 79,
+                'network_id' => 3,
+                'contact_id' => 44,
+                'content' => 'http://lorempixel.com/150/100/?85272',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            114 => 
+            array (
+                'username_id' => 81,
+                'network_id' => 2,
+                'contact_id' => 45,
+                'content' => 'nisi beatae et porro sequi deserunt qui voluptatum omnis vitae',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            115 => 
+            array (
+                'username_id' => 81,
+                'network_id' => 1,
+                'contact_id' => 45,
+                'content' => 'Aut non aspernatur delectus quis illo. Perspiciatis rerum explicabo perferendis quis aut. Non velit harum quidem omnis. Id doloribus aliquid voluptate repellendus.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            116 => 
+            array (
+                'username_id' => 81,
+                'network_id' => 3,
+                'contact_id' => 45,
+                'content' => 'http://lorempixel.com/150/100/?30238',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            117 => 
+            array (
+                'username_id' => 83,
+                'network_id' => 2,
+                'contact_id' => 46,
+                'content' => 'velit debitis ipsa quam hic in enim in et natus',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            118 => 
+            array (
+                'username_id' => 83,
+                'network_id' => 1,
+                'contact_id' => 46,
+                'content' => 'Quis explicabo qui minus blanditiis cupiditate ut iusto. Similique aut voluptatem molestiae repellendus. Ea beatae voluptatem ut dolores ut maxime deserunt eius. Esse totam odit nihil sed est vel aut. Et vel provident aspernatur ab cupiditate.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            119 => 
+            array (
+                'username_id' => 83,
+                'network_id' => 3,
+                'contact_id' => 46,
+                'content' => 'http://lorempixel.com/150/100/?53980',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            120 => 
+            array (
+                'username_id' => 85,
+                'network_id' => 2,
+                'contact_id' => 47,
+                'content' => 'quo ea et eos eius ut est voluptatem aperiam repellendus',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            121 => 
+            array (
+                'username_id' => 85,
+                'network_id' => 1,
+                'contact_id' => 47,
+                'content' => 'Earum et numquam non consequatur sed. Aut rerum omnis minus soluta sed doloribus rerum. Ut tempore eum expedita mollitia. Possimus ullam autem expedita provident aut. Et esse voluptatem laborum quibusdam ut et quaerat est.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            122 => 
+            array (
+                'username_id' => 85,
+                'network_id' => 3,
+                'contact_id' => 47,
+                'content' => 'http://lorempixel.com/150/100/?96458',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            123 => 
+            array (
+                'username_id' => 87,
+                'network_id' => 2,
+                'contact_id' => 48,
+                'content' => 'quia illo velit labore quae nihil saepe est impedit quo',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            124 => 
+            array (
+                'username_id' => 87,
+                'network_id' => 1,
+                'contact_id' => 48,
+                'content' => 'Modi sit in voluptate corrupti aut. Dolorem perferendis eius non quae. Autem sequi voluptas magni mollitia dolores suscipit.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            125 => 
+            array (
+                'username_id' => 87,
+                'network_id' => 3,
+                'contact_id' => 48,
+                'content' => 'http://lorempixel.com/150/100/?65021',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            126 => 
+            array (
+                'username_id' => 89,
+                'network_id' => 2,
+                'contact_id' => 49,
+                'content' => 'veniam asperiores sed provident mollitia magnam quia ea dolor aut',
+                'permalink' => 'https://twitter.com/laracasts/status/823929504536084480',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            127 => 
+            array (
+                'username_id' => 89,
+                'network_id' => 1,
+                'contact_id' => 49,
+                'content' => 'Nesciunt laborum hic consequuntur id. Voluptas sit perferendis expedita ratione repudiandae. Quam voluptatum quia odio dolores sequi incidunt tempora. Placeat commodi voluptatem possimus repudiandae.',
+                'permalink' => 'https://www.facebook.com/CarHopperApp/photos/a.1026080190741744.1073741828.992721110744319/1709178322431924/?type=3',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+            128 => 
+            array (
+                'username_id' => 89,
+                'network_id' => 3,
+                'contact_id' => 49,
+                'content' => 'http://lorempixel.com/150/100/?35833',
+                'permalink' => 'https://www.instagram.com/p/-x98zmDS5l/',
+                'deleted_at' => NULL,
+                'created_at' => '2017-05-30 18:40:31',
+                'updated_at' => '2017-05-30 18:40:31',
+            ),
+        ));
+        
+        
     }
 }
