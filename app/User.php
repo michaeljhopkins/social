@@ -27,6 +27,8 @@ use Illuminate\Notifications\Notifiable;
  * @method static \Illuminate\Database\Query\Builder|\Social\User whereRememberToken($value)
  * @method static \Illuminate\Database\Query\Builder|\Social\User whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $deleted_at
+ * @method static \Illuminate\Database\Query\Builder|\Social\User whereDeletedAt($value)
  */
 class User extends Authenticatable
 {

@@ -3,6 +3,7 @@
 namespace Social;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Social\BaseModel.
@@ -11,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class BaseModel extends Model
 {
-    protected $guarded = [];
+    use SoftDeletes;
+    protected $guarded = ['id'];
     protected $hidden = [];
 }

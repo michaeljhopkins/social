@@ -16,6 +16,8 @@ namespace Social;
  * @method static \Illuminate\Database\Query\Builder|\Social\Client whereName($value)
  * @method static \Illuminate\Database\Query\Builder|\Social\Client whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $deleted_at
+ * @method static \Illuminate\Database\Query\Builder|\Social\Client whereDeletedAt($value)
  */
 class Client extends BaseModel
 {

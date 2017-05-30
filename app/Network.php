@@ -21,6 +21,8 @@ namespace Social;
  * @property string                                                           $url
  * @method static \Illuminate\Database\Query\Builder|\Social\Network whereIcon( $value )
  * @method static \Illuminate\Database\Query\Builder|\Social\Network whereUrl( $value )
+ * @property string $deleted_at
+ * @method static \Illuminate\Database\Query\Builder|\Social\Network whereDeletedAt($value)
  */
 class Network extends BaseModel
 {

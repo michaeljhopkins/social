@@ -18,6 +18,8 @@ namespace Social;
  * @method static \Illuminate\Database\Query\Builder|\Social\Lineup whereName($value)
  * @method static \Illuminate\Database\Query\Builder|\Social\Lineup whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $deleted_at
+ * @method static \Illuminate\Database\Query\Builder|\Social\Lineup whereDeletedAt($value)
  */
 class Lineup extends BaseModel
 {

@@ -20,6 +20,8 @@ namespace Social;
  * @method static \Illuminate\Database\Query\Builder|\Social\Contact whereLastName($value)
  * @method static \Illuminate\Database\Query\Builder|\Social\Contact whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $deleted_at
+ * @method static \Illuminate\Database\Query\Builder|\Social\Contact whereDeletedAt($value)
  */
 class Contact extends BaseModel
 {
