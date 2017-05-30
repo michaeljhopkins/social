@@ -4,186 +4,148 @@ use Illuminate\Database\Seeder;
 
 class ContactLineupTableSeeder extends Seeder
 {
-
     /**
-     * Auto generated seed file
+     * Auto generated seed file.
      *
      * @return void
      */
     public function run()
     {
-        
-
         \DB::table('contact_lineup')->delete();
-        
-        \DB::table('contact_lineup')->insert(array (
-            0 => 
-            array (
+
+        \DB::table('contact_lineup')->insert([
+            0 =>  [
                 'contact_id' => 22,
                 'lineup_id' => 4,
-            ),
-            1 => 
-            array (
+            ],
+            1 =>  [
                 'contact_id' => 12,
                 'lineup_id' => 4,
-            ),
-            2 => 
-            array (
+            ],
+            2 =>  [
                 'contact_id' => 30,
                 'lineup_id' => 4,
-            ),
-            3 => 
-            array (
+            ],
+            3 =>  [
                 'contact_id' => 20,
                 'lineup_id' => 4,
-            ),
-            4 => 
-            array (
+            ],
+            4 =>  [
                 'contact_id' => 13,
                 'lineup_id' => 4,
-            ),
-            5 => 
-            array (
+            ],
+            5 =>  [
                 'contact_id' => 3,
                 'lineup_id' => 4,
-            ),
-            6 => 
-            array (
+            ],
+            6 =>  [
                 'contact_id' => 16,
                 'lineup_id' => 4,
-            ),
-            7 => 
-            array (
+            ],
+            7 =>  [
                 'contact_id' => 9,
                 'lineup_id' => 4,
-            ),
-            8 => 
-            array (
+            ],
+            8 =>  [
                 'contact_id' => 28,
                 'lineup_id' => 4,
-            ),
-            9 => 
-            array (
+            ],
+            9 =>  [
                 'contact_id' => 6,
                 'lineup_id' => 4,
-            ),
-            10 => 
-            array (
+            ],
+            10 =>  [
                 'contact_id' => 9,
                 'lineup_id' => 5,
-            ),
-            11 => 
-            array (
+            ],
+            11 =>  [
                 'contact_id' => 25,
                 'lineup_id' => 5,
-            ),
-            12 => 
-            array (
+            ],
+            12 =>  [
                 'contact_id' => 7,
                 'lineup_id' => 5,
-            ),
-            13 => 
-            array (
+            ],
+            13 =>  [
                 'contact_id' => 30,
                 'lineup_id' => 6,
-            ),
-            14 => 
-            array (
+            ],
+            14 =>  [
                 'contact_id' => 17,
                 'lineup_id' => 6,
-            ),
-            15 => 
-            array (
+            ],
+            15 =>  [
                 'contact_id' => 14,
                 'lineup_id' => 6,
-            ),
-            16 => 
-            array (
+            ],
+            16 =>  [
                 'contact_id' => 27,
                 'lineup_id' => 6,
-            ),
-            17 => 
-            array (
+            ],
+            17 =>  [
                 'contact_id' => 4,
                 'lineup_id' => 6,
-            ),
-            18 => 
-            array (
+            ],
+            18 =>  [
                 'contact_id' => 28,
                 'lineup_id' => 6,
-            ),
-            19 => 
-            array (
+            ],
+            19 =>  [
                 'contact_id' => 18,
                 'lineup_id' => 6,
-            ),
-            20 => 
-            array (
+            ],
+            20 =>  [
                 'contact_id' => 25,
                 'lineup_id' => 6,
-            ),
-            21 => 
-            array (
+            ],
+            21 =>  [
                 'contact_id' => 21,
                 'lineup_id' => 6,
-            ),
-            22 => 
-            array (
+            ],
+            22 =>  [
                 'contact_id' => 5,
                 'lineup_id' => 6,
-            ),
-            23 => 
-            array (
+            ],
+            23 =>  [
                 'contact_id' => 29,
                 'lineup_id' => 6,
-            ),
-            24 => 
-            array (
+            ],
+            24 =>  [
                 'contact_id' => 8,
                 'lineup_id' => 6,
-            ),
-            25 => 
-            array (
+            ],
+            25 =>  [
                 'contact_id' => 20,
                 'lineup_id' => 6,
-            ),
-            26 => 
-            array (
+            ],
+            26 =>  [
                 'contact_id' => 24,
                 'lineup_id' => 6,
-            ),
-            27 => 
-            array (
+            ],
+            27 =>  [
                 'contact_id' => 2,
                 'lineup_id' => 6,
-            ),
-            28 => 
-            array (
+            ],
+            28 =>  [
                 'contact_id' => 23,
                 'lineup_id' => 6,
-            ),
-            29 => 
-            array (
+            ],
+            29 =>  [
                 'contact_id' => 13,
                 'lineup_id' => 6,
-            ),
-            30 => 
-            array (
+            ],
+            30 =>  [
                 'contact_id' => 6,
                 'lineup_id' => 6,
-            ),
-            31 => 
-            array (
+            ],
+            31 =>  [
                 'contact_id' => 26,
                 'lineup_id' => 6,
-            ),
-            32 => 
-            array (
+            ],
+            32 =>  [
                 'contact_id' => 22,
                 'lineup_id' => 6,
-            ),
-        ));
-        
-        
+            ],
+        ]);
     }
 }

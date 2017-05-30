@@ -11,27 +11,27 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-	    /*
-		 * Eloquent seeder for Contacts and usernames
-		 */
+        /*
+         * Eloquent seeder for Contacts and usernames
+         */
 
-	    //$this->call(EloquentClientsTableSeeder::class);
-	    //$this->call(EloquentUsersTableSeeder::class);
-	    //$this->call(EloquentNetworksTableSeeder::class);
-	    //$this->call(EloquentContactsAndUsernamesTableSeeder::class);
-	    //$this->call(EloquentPostsTableSeeder::class);
-	    //$this->call( EloquentLineupsTableSeeder::class);
+        //$this->call(EloquentClientsTableSeeder::class);
+        //$this->call(EloquentUsersTableSeeder::class);
+        //$this->call(EloquentNetworksTableSeeder::class);
+        //$this->call(EloquentContactsAndUsernamesTableSeeder::class);
+        //$this->call(EloquentPostsTableSeeder::class);
+        //$this->call( EloquentLineupsTableSeeder::class);
 
-	    /*
-	     * Faster array based seeders for contacts and usernames
-	     //*/
+        /*
+         * Faster array based seeders for contacts and usernames
+         //*/
         $this->call(ContactsTableSeeder::class);
         $this->call(UsernamesTableSeeder::class);
         $this->call(FederalLegislatorsTableSeeder::class);
         $this->call(ClientLineupTableSeeder::class);
         $this->call(ClientsTableSeeder::class);
         //$this->call(LineupsTableSeeder::class);
-        $this->call( EloquentLineupsTableSeeder::class);
+        $this->call(EloquentLineupsTableSeeder::class);
         $this->call(NetworksTableSeeder::class);
         $this->call(PostsTableSeeder::class);
         $this->call(TempFedsTableSeeder::class);
