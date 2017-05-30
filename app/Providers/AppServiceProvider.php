@@ -3,6 +3,8 @@
 namespace Social\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Social\Lineup;
+use View;
 
 class AppServiceProvider extends ServiceProvider {
 
@@ -12,7 +14,10 @@ class AppServiceProvider extends ServiceProvider {
 	 * @return void
 	 */
 	public function boot() {
-		//
+		View::composer( '*', function ( $view ) {
+			$lineups = Lineup::all();
+			$view->with( 'lineups', $lineups );
+		} );
 	}
 
 	/**
