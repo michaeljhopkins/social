@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFederalLegislatorsTable extends Migration {
+class CreateTempFedsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateFederalLegislatorsTable extends Migration {
 	 * @return void
 	 */
 	public function up() {
-		Schema::create( 'federal_legislators', function ( Blueprint $table ) {
+		Schema::create( 'temp_feds', function ( Blueprint $table ) {
 			$table->increments( 'id' );
 			$table->string( 'first_name' );
 			$table->string( 'last_name' );
@@ -28,6 +28,6 @@ class CreateFederalLegislatorsTable extends Migration {
 	 * @return void
 	 */
 	public function down() {
-		Schema::dropIfExists( 'federal_legislators' );
+		Schema::dropIfExists( 'temp_feds' );
 	}
 }
