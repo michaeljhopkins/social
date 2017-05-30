@@ -4,6 +4,7 @@ namespace Social\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Social\Console\Commands\SyncFedLegTableToContacts;
 
 class Kernel extends ConsoleKernel
 {
@@ -15,6 +16,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         \Spatie\ArtisanDd\DdCommand::class,
         \Spatie\MigrateFresh\Commands\MigrateFresh::class,
+        SyncFedLegTableToContacts::class,
     ];
 
     /**
@@ -26,7 +28,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-
     }
 
     /**
