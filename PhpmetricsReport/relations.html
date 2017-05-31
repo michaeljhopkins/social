@@ -50,7 +50,7 @@
 <div class="page">
     <div class="content">
         <div class="report-details">
-            Created at 2017-05-30 03:51:47        , with PHPMetrics v2.2.0 (<a href="https://twitter.com.Halleck45">Jean-François Lépine</a>).
+            Created at 2017-05-31 22:51:22        , with PHPMetrics v2.2.0 (<a href="https://twitter.com.Halleck45">Jean-François Lépine</a>).
         </div>
 
 
@@ -93,7 +93,7 @@
                             <path d="M0 0h24v24H0z" fill="none"/>
                             <path d="M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z"/>
                         </svg>
-                        Violations (54)
+                        Violations (0)
                     </a>
                 </li>
                                 <li>
@@ -221,19 +221,83 @@
 
     var relations = [
     {
-        "name": "\\Illuminate\\Support\\Facades\\App",
+        "name": "\\Social\\BaseModel",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "\\Illuminate\\Foundation\\Application",
+        "name": "\\Illuminate\\Database\\Eloquent\\Model",
         "size": 3000,
         "relations": []
     },
     {
-        "name": "\\Illuminate\\Support\\Facades\\Artisan",
+        "name": "\\Social\\Client",
+        "size": 3000,
+        "relations": [
+            "\\Social\\BaseModel"
+        ]
+    },
+    {
+        "name": "\\Social\\Console\\Commands\\SyncFedLegTableToContacts",
+        "size": 3000,
+        "relations": [
+            "\\Illuminate\\Console\\Command",
+            "\\parent",
+            "\\Illuminate\\Support\\Collection",
+            "\\DB",
+            "\\Social\\Contact",
+            "\\Social\\TempFed",
+            "\\Social\\Lineup",
+            "\\Social\\FederalLegislator"
+        ]
+    },
+    {
+        "name": "\\Illuminate\\Console\\Command",
         "size": 3000,
         "relations": []
+    },
+    {
+        "name": "\\parent",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Illuminate\\Support\\Collection",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\DB",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Social\\Contact",
+        "size": 3000,
+        "relations": [
+            "\\Social\\BaseModel"
+        ]
+    },
+    {
+        "name": "\\Social\\TempFed",
+        "size": 3000,
+        "relations": [
+            "\\Illuminate\\Database\\Eloquent\\Model"
+        ]
+    },
+    {
+        "name": "\\Social\\Lineup",
+        "size": 3000,
+        "relations": [
+            "\\Social\\BaseModel"
+        ]
+    },
+    {
+        "name": "\\Social\\FederalLegislator",
+        "size": 3000,
+        "relations": [
+            "\\Illuminate\\Database\\Eloquent\\Model"
+        ]
     },
     {
         "name": "\\Social\\Console\\Kernel",
@@ -242,586 +306,6 @@
             "\\Illuminate\\Foundation\\Console\\Kernel",
             "\\Illuminate\\Console\\Scheduling\\Schedule"
         ]
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Auth",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Auth\\AuthManager",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Auth\\SessionGuard",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Blade",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\View\\Compilers\\BladeCompiler",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Broadcast",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Broadcasting\\BroadcastManager",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Bus",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Bus\\Dispatcher",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Cache",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Cache\\CacheManager",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Cache\\Repository",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Cache\\FileStore",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Config",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Config\\Repository",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Cookie",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Cookie\\CookieJar",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Crypt",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Encryption\\Encrypter",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\DB",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Database\\DatabaseManager",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Database\\PostgresConnection",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Event",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Events\\Dispatcher",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\File",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Filesystem\\Filesystem",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Gate",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Auth\\Access\\Gate",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Hash",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Hashing\\BcryptHasher",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Lang",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Translation\\Translator",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Log",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Monolog\\Logger",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Log\\Writer",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Mail",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Mail\\Mailer",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Notification",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Notifications\\ChannelManager",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Password",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Auth\\Passwords\\PasswordBrokerManager",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Queue",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Queue\\QueueManager",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Queue\\SyncQueue",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Redirect",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Routing\\Redirector",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Request",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Http\\Request",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Response",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Routing\\ResponseFactory",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Route",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Routing\\Router",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Schema",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Database\\Schema\\PostgresBuilder",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Session",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Session\\SessionManager",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Session\\Store",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Storage",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Filesystem\\FilesystemManager",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Filesystem\\FilesystemAdapter",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\URL",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Routing\\UrlGenerator",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\Validator",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Validation\\Factory",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Facades\\View",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\View\\Factory",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\App",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\App"
-        ]
-    },
-    {
-        "name": "\\Artisan",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Artisan"
-        ]
-    },
-    {
-        "name": "\\Auth",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Auth"
-        ]
-    },
-    {
-        "name": "\\Blade",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Blade"
-        ]
-    },
-    {
-        "name": "\\Broadcast",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Broadcast"
-        ]
-    },
-    {
-        "name": "\\Bus",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Bus"
-        ]
-    },
-    {
-        "name": "\\Cache",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Cache"
-        ]
-    },
-    {
-        "name": "\\Config",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Config"
-        ]
-    },
-    {
-        "name": "\\Cookie",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Cookie"
-        ]
-    },
-    {
-        "name": "\\Crypt",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Crypt"
-        ]
-    },
-    {
-        "name": "\\DB",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\DB"
-        ]
-    },
-    {
-        "name": "\\Event",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Event"
-        ]
-    },
-    {
-        "name": "\\File",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\File"
-        ]
-    },
-    {
-        "name": "\\Gate",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Gate"
-        ]
-    },
-    {
-        "name": "\\Hash",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Lang",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Lang"
-        ]
-    },
-    {
-        "name": "\\Log",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Log"
-        ]
-    },
-    {
-        "name": "\\Mail",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Mail"
-        ]
-    },
-    {
-        "name": "\\Notification",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Notification"
-        ]
-    },
-    {
-        "name": "\\Password",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Password"
-        ]
-    },
-    {
-        "name": "\\Queue",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Queue"
-        ]
-    },
-    {
-        "name": "\\Redirect",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Redirect"
-        ]
-    },
-    {
-        "name": "\\Request",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Request"
-        ]
-    },
-    {
-        "name": "\\Response",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Response"
-        ]
-    },
-    {
-        "name": "\\Route",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Route"
-        ]
-    },
-    {
-        "name": "\\Schema",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Session",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Session"
-        ]
-    },
-    {
-        "name": "\\Storage",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Storage"
-        ]
-    },
-    {
-        "name": "\\URL",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\URL"
-        ]
-    },
-    {
-        "name": "\\Validator",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Support\\Facades\\Validator"
-        ]
-    },
-    {
-        "name": "\\View",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Eloquent",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Database\\Eloquent\\Model",
-            "\\Illuminate\\Database\\Eloquent\\Builder",
-            "\\Illuminate\\Database\\Query\\Builder"
-        ]
-    },
-    {
-        "name": "\\Illuminate\\Database\\Eloquent\\Model",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Database\\Eloquent\\Builder",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Database\\Query\\Builder",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Illuminate\\Support\\Fluent",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Social\\BaseModel",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Social\\Client",
-        "size": 3000,
-        "relations": []
     },
     {
         "name": "\\Illuminate\\Foundation\\Console\\Kernel",
@@ -834,17 +318,10 @@
         "relations": []
     },
     {
-        "name": "\\Social\\Contact",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "\\Social\\Exceptions\\Handler",
         "size": 3000,
         "relations": [
             "\\Illuminate\\Foundation\\Exceptions\\Handler",
-            "\\Exception",
-            "\\parent",
             "\\Illuminate\\Auth\\AuthenticationException"
         ]
     },
@@ -854,17 +331,22 @@
         "relations": []
     },
     {
-        "name": "\\Exception",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\parent",
-        "size": 3000,
-        "relations": []
-    },
-    {
         "name": "\\Illuminate\\Auth\\AuthenticationException",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Social\\Filters\\Filters",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Illuminate\\Http\\Request",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Social\\Filters\\PostFilters",
         "size": 3000,
         "relations": []
     },
@@ -879,10 +361,23 @@
         "relations": []
     },
     {
+        "name": "\\Social\\Network",
+        "size": 3000,
+        "relations": [
+            "\\Social\\BaseModel"
+        ]
+    },
+    {
+        "name": "\\View",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\Social\\Http\\Controllers\\HomeController",
         "size": 3000,
         "relations": [
             "\\Social\\Http\\Controllers\\Controller",
+            "\\Social\\Filters\\PostFilters",
             "\\Social\\Post"
         ]
     },
@@ -898,20 +393,11 @@
         "size": 3000,
         "relations": [
             "\\Social\\Http\\Controllers\\Controller",
-            "\\Social\\Network",
+            "\\Social\\Filters\\PostFilters",
+            "\\Illuminate\\Http\\Request",
             "\\Social\\Lineup",
             "\\Social\\Post"
         ]
-    },
-    {
-        "name": "\\Social\\Network",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Social\\Lineup",
-        "size": 3000,
-        "relations": []
     },
     {
         "name": "\\Social\\Http\\Kernel",
@@ -951,6 +437,11 @@
         "relations": []
     },
     {
+        "name": "\\Illuminate\\Support\\Facades\\Auth",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\Social\\Http\\Middleware\\TrimStrings",
         "size": 3000,
         "relations": [
@@ -978,9 +469,7 @@
         "name": "\\Social\\Providers\\AppServiceProvider",
         "size": 3000,
         "relations": [
-            "\\Illuminate\\Support\\ServiceProvider",
-            "\\Social\\Lineup",
-            "\\View"
+            "\\Illuminate\\Support\\ServiceProvider"
         ]
     },
     {
@@ -1009,11 +498,15 @@
         ]
     },
     {
+        "name": "\\Illuminate\\Support\\Facades\\Broadcast",
+        "size": 3000,
+        "relations": []
+    },
+    {
         "name": "\\Social\\Providers\\EventServiceProvider",
         "size": 3000,
         "relations": [
-            "\\Illuminate\\Foundation\\Support\\Providers\\EventServiceProvider",
-            "\\parent"
+            "\\Illuminate\\Foundation\\Support\\Providers\\EventServiceProvider"
         ]
     },
     {
@@ -1026,12 +519,16 @@
         "size": 3000,
         "relations": [
             "\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider",
-            "\\parent",
             "\\Illuminate\\Support\\Facades\\Route"
         ]
     },
     {
         "name": "\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider",
+        "size": 3000,
+        "relations": []
+    },
+    {
+        "name": "\\Illuminate\\Support\\Facades\\Route",
         "size": 3000,
         "relations": []
     },
@@ -1050,162 +547,8 @@
     {
         "name": "\\Social\\Username",
         "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\CreateUsersTable",
-        "size": 3000,
         "relations": [
-            "\\Illuminate\\Database\\Migrations\\Migration",
-            "\\Illuminate\\Support\\Facades\\Schema"
-        ]
-    },
-    {
-        "name": "\\Illuminate\\Database\\Migrations\\Migration",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\CreatePasswordResetsTable",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Database\\Migrations\\Migration",
-            "\\Illuminate\\Support\\Facades\\Schema"
-        ]
-    },
-    {
-        "name": "\\CreateClientsTable",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Database\\Migrations\\Migration",
-            "\\Illuminate\\Support\\Facades\\Schema"
-        ]
-    },
-    {
-        "name": "\\CreateLineupsTable",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Database\\Migrations\\Migration",
-            "\\Illuminate\\Support\\Facades\\Schema"
-        ]
-    },
-    {
-        "name": "\\CreateContactsTable",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Database\\Migrations\\Migration",
-            "\\Illuminate\\Support\\Facades\\Schema"
-        ]
-    },
-    {
-        "name": "\\CreateNetworksTable",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Database\\Migrations\\Migration",
-            "\\Illuminate\\Support\\Facades\\Schema"
-        ]
-    },
-    {
-        "name": "\\CreateUsernamesTable",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Database\\Migrations\\Migration",
-            "\\Illuminate\\Support\\Facades\\Schema"
-        ]
-    },
-    {
-        "name": "\\CreatePostsTable",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Database\\Migrations\\Migration",
-            "\\Illuminate\\Support\\Facades\\Schema"
-        ]
-    },
-    {
-        "name": "\\CreateClientLineupPivotTable",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Database\\Migrations\\Migration",
-            "\\Schema"
-        ]
-    },
-    {
-        "name": "\\CreateContactlineupPivotTable",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Database\\Migrations\\Migration",
-            "\\Schema"
-        ]
-    },
-    {
-        "name": "\\ClientsTableSeeder",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Database\\Seeder",
-            "\\Faker\\Factory",
-            "\\Social\\Client"
-        ]
-    },
-    {
-        "name": "\\Illuminate\\Database\\Seeder",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\Faker\\Factory",
-        "size": 3000,
-        "relations": []
-    },
-    {
-        "name": "\\ContactsAndUsernamesTableSeeder",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Database\\Seeder",
-            "\\Social\\Contact"
-        ]
-    },
-    {
-        "name": "\\DatabaseSeeder",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Database\\Seeder"
-        ]
-    },
-    {
-        "name": "\\LineupsTableSeeder",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Database\\Seeder",
-            "\\Social\\Lineup",
-            "\\Social\\Contact"
-        ]
-    },
-    {
-        "name": "\\NetworksTableSeeder",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Database\\Seeder",
-            "\\Social\\Network"
-        ]
-    },
-    {
-        "name": "\\PostsTableSeeder",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Database\\Seeder",
-            "\\Faker\\Factory",
-            "\\Social\\Network",
-            "\\Social\\Username"
-        ]
-    },
-    {
-        "name": "\\UsersTableSeeder",
-        "size": 3000,
-        "relations": [
-            "\\Illuminate\\Database\\Seeder",
-            "\\Faker\\Factory",
-            "\\Social\\Client",
-            "\\Hash"
+            "\\Social\\BaseModel"
         ]
     }
 ];

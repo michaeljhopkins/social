@@ -25,6 +25,8 @@ class DatabaseSeeder extends Seeder
         /*
          * Faster array based seeders for contacts and usernames
          //*/
+
+	    $this->call(NetworksTableSeeder::class);
         $this->call(ContactsTableSeeder::class);
         $this->call(UsernamesTableSeeder::class);
         $this->call(FederalLegislatorsTableSeeder::class);
@@ -32,7 +34,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ClientsTableSeeder::class);
         //$this->call(LineupsTableSeeder::class);
         $this->call(EloquentLineupsTableSeeder::class);
-        $this->call(NetworksTableSeeder::class);
         $this->call(PostsTableSeeder::class);
         $this->call(TempFedsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
