@@ -11,18 +11,14 @@ class LineupsController extends Controller
 {
     public function show($lineup, PostFilters $filter)
     {
-        $results = Lineup::with('contacts.usernames.network')
-                         ->whereName($lineup)
-                         ->first();
-        $postList = Post::with('username', 'contact', 'network')
-                        ->whereIn('contact_id', $results->contacts->pluck('id')->toArray());
-        $view = [
-            'lineup'   => $results,
-            'posts'    => $this->getPosts($filter, $postList)->paginate(30),
-            'contacts' => $results->contacts->sortBy('last_name'),
-        ];
+        $requestedLineup = $this->getLineup($lineup);
+        $postList = $this->getLineupsPosts($requestedLineup);
 
-        return view('lineups.show', $view);
+        return view('lineups.show', [
+	        'lineup'   => $requestedLineup,
+	        'posts'    => $this->getPosts($filter, $postList)->paginate(30),
+	        'contacts' => $requestedLineup->contacts->sortBy('last_name'),
+        ]);
     }
 
     public function create()
@@ -50,4 +46,15 @@ class LineupsController extends Controller
             return Post::with(['network', 'username', 'contact'])->latest()->filter($filters);
         }
     }
+
+	private function getLineup(string $lineup) {
+		return Lineup::with('contacts.usernames.network')
+		      ->whereName($lineup)
+		      ->first();
+	}
+
+	private function getLineupsPosts(Lineup $lineup) {
+		return Post::with('username', 'contact', 'network')
+		    ->whereIn('contact_id', $lineup->contacts->pluck('id')->toArray());
+	}
 }
