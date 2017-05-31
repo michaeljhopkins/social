@@ -66,7 +66,7 @@ class SyncFedLegTableToContacts extends Command
      */
     public function createNecessaryContactsAndUsernames(Collection $results)
     {
-        $results->each(function ($r) {
+        $results->each(function (Collection $r) {
             /** @var Contact $c */
             $c = Contact::create([
                 'first_name' => $r->first_name,
@@ -86,7 +86,7 @@ class SyncFedLegTableToContacts extends Command
 
     public function recreateTempFeds()
     {
-        $this->createdContacts->each(function ($c) {
+        $this->createdContacts->each(function (Collection $c) {
             /* @var Contact $c */
             TempFed::create([
                 'first_name'       => $c->first_name,

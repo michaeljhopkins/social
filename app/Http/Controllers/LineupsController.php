@@ -5,7 +5,6 @@ namespace Social\Http\Controllers;
 use Illuminate\Http\Request;
 use Social\Filters\PostFilters;
 use Social\Lineup;
-use Social\Network;
 use Social\Post;
 
 class LineupsController extends Controller
