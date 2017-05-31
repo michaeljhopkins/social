@@ -15,11 +15,14 @@ class CreateUsernamesTable extends Migration
     {
         Schema::create('usernames', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('contact_id');
-            $table->integer('network_id');
+            $table->unsignedInteger('contact_id');
+            $table->unsignedInteger('network_id');
             $table->string('identifyer');
             $table->softDeletes();
             $table->timestamps();
+
+	        $table->foreign('contact_id')->references('id')->on('contacts')->onDelete('cascade');
+	        $table->foreign('network_id')->references('id')->on('networks')->onDelete('cascade');
         });
     }
 

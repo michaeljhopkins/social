@@ -49,7 +49,7 @@ class SyncFedLegTableToContacts extends Command
         $results = $this->getDiffOfFedLegAndTempLeg();
         if ($results->count()) {
             $this->createNecessaryContactsAndUsernames($results);
-            $this->recreateTempFeds();
+            $this->addNewTempFeds();
         }
         $this->recreateLegislativeList();
     }
@@ -84,7 +84,7 @@ class SyncFedLegTableToContacts extends Command
         });
     }
 
-    public function recreateTempFeds()
+    public function addNewTempFeds()
     {
         $this->createdContacts->each(function (Collection $c) {
             /* @var Contact $c */
