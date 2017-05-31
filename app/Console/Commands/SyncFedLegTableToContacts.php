@@ -51,7 +51,7 @@ class SyncFedLegTableToContacts extends Command
             $this->createNecessaryContactsAndUsernames($results);
             $this->recreateTempFeds();
         }
-	    $this->recreateLegislativeList();
+        $this->recreateLegislativeList();
     }
 
     public function getDiffOfFedLegAndTempLeg()
@@ -97,21 +97,22 @@ class SyncFedLegTableToContacts extends Command
         });
     }
 
-	private function recreateLegislativeList() {
-    	$lineup = Lineup::whereName('Legislators')->first();
-    	if($lineup) {
-    		$lineup->delete();
-    	}
-    	/** @var Lineup $l */
-    	$l = Lineup::create(['name' => 'Legislators']);
-    	$federalLegislators = FederalLegislator::get(['first_name','last_name']);
-    	$contacts = [];
-    	foreach ($federalLegislators as $fed){
-    		$contact = Contact::where('first_name',$fed->first_name)->where('last_name',$fed->last_name)->first();
-    		if($contact) {
-			    $contacts[] = $contact->id;
-		    }
-	    }
-	    $l->contacts()->sync($contacts);
-	}
+    private function recreateLegislativeList()
+    {
+        $lineup = Lineup::whereName('Legislators')->first();
+        if ($lineup) {
+            $lineup->delete();
+        }
+        /** @var Lineup $l */
+        $l = Lineup::create(['name' => 'Legislators']);
+        $federalLegislators = FederalLegislator::get(['first_name', 'last_name']);
+        $contacts = [];
+        foreach ($federalLegislators as $fed) {
+            $contact = Contact::where('first_name', $fed->first_name)->where('last_name', $fed->last_name)->first();
+            if ($contact) {
+                $contacts[] = $contact->id;
+            }
+        }
+        $l->contacts()->sync($contacts);
+    }
 }

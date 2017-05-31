@@ -171,7 +171,7 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Spatie\CollectionMacros\CollectionMacroServiceProvider::class,
         Orangehill\Iseed\IseedServiceProvider::class,
-	    Collective\Html\HtmlServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
         /*
          * Application Service Providers...

@@ -47,8 +47,9 @@ class Post extends BaseModel
     {
         return $this->belongsTo(Contact::class);
     }
-	public function scopeFilter($query, $filters)
-	{
-		return $filters->apply($query);
-	}
+
+    public function scopeFilter($query, $filters)
+    {
+        return $filters->apply($query);
+    }
 }
