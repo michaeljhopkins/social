@@ -106,6 +106,9 @@ This code has had a number of different metrics executed against it
 - [SensioLabs Insight](https://insight.sensiolabs.com/projects/e64ccbab-447a-4ed0-8506-9eae666ce0bf) : [![SensioLabsInsight](https://insight.sensiolabs.com/projects/e64ccbab-447a-4ed0-8506-9eae666ce0bf/small.png)](https://insight.sensiolabs.com/projects/e64ccbab-447a-4ed0-8506-9eae666ce0bf)
 - [PhpMetrics](http://www.phpmetrics.org/) : The results of this can be viewed in at `/PhpMetrics/index.html`. A preview below
 ![](http://i.imgur.com/RIj2Wc9.png)
+- [Sonarqube](https://sonarqube.org)
+![](http://i.imgur.com/tfr9UND.png)
+![](http://i.imgur.com/RaokMGt.png)
 
 
 <a name="N1Queries"></a>
