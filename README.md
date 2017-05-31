@@ -126,3 +126,4 @@ public function getDiffOfFedLegAndTempLeg(){
     }
 ```
 Given more time I would have figured out how to write this with Eloquent. However, in it's current state, this raw query means that the software can only be used with a postgres datastore.
+
