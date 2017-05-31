@@ -26,7 +26,7 @@
                     <ul class="dropdown-menu">
                         @foreach($lineups as $lineup)
                             <li>
-                                <a href="/lineups/{{$lineup->id}}">
+                                <a href="/lineups/{{$lineup->name}}">
                                     {{$lineup->name}}
                                 </a>
                             </li>

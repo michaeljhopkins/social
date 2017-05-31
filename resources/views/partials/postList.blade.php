@@ -22,3 +22,4 @@
         </div>
     </div>
 @endforeach
+{!! $posts->appends(request()->except('page'))->links() !!}

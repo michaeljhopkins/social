@@ -15,7 +15,7 @@ class CreateLineupsTable extends Migration
     {
         Schema::create('lineups', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->softDeletes();
             $table->timestamps();
         });

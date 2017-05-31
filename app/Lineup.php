@@ -23,6 +23,10 @@ namespace Social;
  */
 class Lineup extends BaseModel
 {
+	public function getRouteKeyName()
+	{
+		return 'name';
+	}
     public function clients()
     {
         return $this->belongsToMany(Client::class);
