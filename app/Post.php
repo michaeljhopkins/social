@@ -28,6 +28,7 @@ namespace Social;
  * @method static \Illuminate\Database\Query\Builder|\Social\Post wherePermalink( $value )
  * @property string $deleted_at
  * @method static \Illuminate\Database\Query\Builder|\Social\Post whereDeletedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\Social\Post filter($filters)
  */
 class Post extends BaseModel
 {
