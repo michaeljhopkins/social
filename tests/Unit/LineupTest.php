@@ -26,4 +26,13 @@ class LineupTest extends TestCase
     	$lineup->clients()->attach($client);
     	$this->assertTrue($lineup->clients->contains($client));
     }
+
+    /** @test */
+    function route_key_name()
+    {
+    	$lineup = create(Lineup::class);
+    	$this->assertEquals('name', $lineup->getRouteKeyName());
+    	$keyname =$lineup->getRouteKeyName();
+    	$this->assertEquals($lineup->name, $lineup->$keyname);
+    }
 }

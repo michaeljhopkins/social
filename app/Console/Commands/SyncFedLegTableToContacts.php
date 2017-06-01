@@ -9,6 +9,7 @@ use Social\FederalLegislator;
 use Social\Lineup;
 use Social\TempFed;
 use DB;
+use stdClass;
 
 /**
  * Class SyncFedLegTableToContacts.
@@ -66,7 +67,7 @@ class SyncFedLegTableToContacts extends Command
      */
     public function createNecessaryContactsAndUsernames(Collection $results)
     {
-        $results->each(function (Collection $r) {
+        $results->each(function (stdClass $r) {
             /** @var Contact $c */
             $c = Contact::create([
                 'first_name' => $r->first_name,
@@ -86,7 +87,7 @@ class SyncFedLegTableToContacts extends Command
 
     public function addNewTempFeds()
     {
-        $this->createdContacts->each(function (Collection $c) {
+        $this->createdContacts->each(function (Contact $c) {
             /* @var Contact $c */
             TempFed::create([
                 'first_name'       => $c->first_name,

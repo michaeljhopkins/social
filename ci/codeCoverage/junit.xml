@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="22" assertions="26" failures="0" errors="0" time="7.007945">
+    <testsuite name="Feature Tests" tests="6" assertions="10" failures="0" errors="0" time="2.238721">
+      <testsuite name="Tests\Feature\CreateLineupsTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Feature/CreateLineupsTest.php" tests="2" assertions="3" failures="0" errors="0" time="0.716126">
+        <testcase name="new_lineups_can_be_created" class="Tests\Feature\CreateLineupsTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Feature/CreateLineupsTest.php" line="11" assertions="2" time="0.406304"/>
+        <testcase name="create_page_for_lineups_contains_form" class="Tests\Feature\CreateLineupsTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Feature/CreateLineupsTest.php" line="18" assertions="1" time="0.309822"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\FilterPostsTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Feature/FilterPostsTest.php" tests="2" assertions="4" failures="0" errors="0" time="0.807200">
+        <testcase name="posts_can_be_filtered_by_network" class="Tests\Feature\FilterPostsTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Feature/FilterPostsTest.php" line="12" assertions="2" time="0.399362"/>
+        <testcase name="posts_can_be_filtered_by_date" class="Tests\Feature\FilterPostsTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Feature/FilterPostsTest.php" line="22" assertions="2" time="0.407838"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\SiteRootTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Feature/SiteRootTest.php" tests="1" assertions="2" failures="0" errors="0" time="0.389765">
+        <testcase name="site_root_contains_all_posts" class="Tests\Feature\SiteRootTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Feature/SiteRootTest.php" line="11" assertions="2" time="0.389765"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\ViewLineupTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Feature/ViewLineupTest.php" tests="1" assertions="1" failures="0" errors="0" time="0.325630">
+        <testcase name="specific_lineup_is_viewable" class="Tests\Feature\ViewLineupTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Feature/ViewLineupTest.php" line="12" assertions="1" time="0.325630"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Unit Tests" tests="16" assertions="16" failures="0" errors="0" time="4.769224">
+      <testsuite name="Tests\Unit\ClientTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/ClientTest.php" tests="2" assertions="2" failures="0" errors="0" time="0.623785">
+        <testcase name="a_client_has_users" class="Tests\Unit\ClientTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/ClientTest.php" line="13" assertions="1" time="0.340511"/>
+        <testcase name="a_client_belongs_to_many_lineups" class="Tests\Unit\ClientTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/ClientTest.php" line="21" assertions="1" time="0.283274"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\ContactTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/ContactTest.php" tests="3" assertions="3" failures="0" errors="0" time="0.904900">
+        <testcase name="contacts_have_usernames" class="Tests\Unit\ContactTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/ContactTest.php" line="14" assertions="1" time="0.307833"/>
+        <testcase name="contacts_have_posts" class="Tests\Unit\ContactTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/ContactTest.php" line="22" assertions="1" time="0.304811"/>
+        <testcase name="contacts_belong_to_many_lineups" class="Tests\Unit\ContactTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/ContactTest.php" line="30" assertions="1" time="0.292256"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\LineupTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/LineupTest.php" tests="2" assertions="2" failures="0" errors="0" time="0.565965">
+        <testcase name="lineups_belongs_to_many_contacts" class="Tests\Unit\LineupTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/LineupTest.php" line="13" assertions="1" time="0.282073"/>
+        <testcase name="lineups_belong_to_many_clients" class="Tests\Unit\LineupTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/LineupTest.php" line="22" assertions="1" time="0.283892"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\NetworkTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/NetworkTest.php" tests="2" assertions="2" failures="0" errors="0" time="0.579702">
+        <testcase name="a_network_has_usernames" class="Tests\Unit\NetworkTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/NetworkTest.php" line="14" assertions="1" time="0.282775"/>
+        <testcase name="a_network_has_posts" class="Tests\Unit\NetworkTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/NetworkTest.php" line="22" assertions="1" time="0.296927"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\PostTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/PostTest.php" tests="3" assertions="3" failures="0" errors="0" time="0.890983">
+        <testcase name="posts_belong_to_a_network" class="Tests\Unit\PostTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/PostTest.php" line="14" assertions="1" time="0.298242"/>
+        <testcase name="posts_belong_to_a_username" class="Tests\Unit\PostTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/PostTest.php" line="21" assertions="1" time="0.296309"/>
+        <testcase name="posts_belong_to_a_contact" class="Tests\Unit\PostTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/PostTest.php" line="28" assertions="1" time="0.296432"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\UserTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/UserTest.php" tests="1" assertions="1" failures="0" errors="0" time="0.337046">
+        <testcase name="a_user_belongs_to_a_client" class="Tests\Unit\UserTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/UserTest.php" line="12" assertions="1" time="0.337046"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\UsernameTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/UsernameTest.php" tests="3" assertions="3" failures="0" errors="0" time="0.866843">
+        <testcase name="username_belongs_to_a_network" class="Tests\Unit\UsernameTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/UsernameTest.php" line="14" assertions="1" time="0.281231"/>
+        <testcase name="username_belongs_to_a_contact" class="Tests\Unit\UsernameTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/UsernameTest.php" line="21" assertions="1" time="0.282683"/>
+        <testcase name="username_has_many_posts" class="Tests\Unit\UsernameTest" file="/Users/michaelhopkins/Projects/Web/Social/tests/Unit/UsernameTest.php" line="28" assertions="1" time="0.302929"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
